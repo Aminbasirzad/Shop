@@ -1,19 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><!----- Shered In Mellatweb.com --->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
-<link rel="stylesheet" href="assets/css/meanmenu.css">
-<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/css/icofont.min.css">
-<link rel="stylesheet" href="assets/css/font-awesome-pro.css">
-<link rel="stylesheet" href="assets/css/scrollcue.css">
-<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="{% static '/css/bootstrap.rtl.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/meanmenu.css' %}">
+<link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/font-awesome-pro.css' %}">
+<link rel="stylesheet" href="{% static '/css/scrollcue.css' %}">
+<link rel="stylesheet" href="{% static '/css/magnific-popup.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+<link rel="icon" type="image/png" href="{% static '/images/favicon.png %}">
 <title>Stir - قالب HTML آژانس چند منظوره</title>
 </head>
 <body>
@@ -30,7 +32,7 @@
 <div class="ball"></div>
 </div></div>
 <div class="navbar-area bg-black">
-<div class="main-nav"><div class="container mw-1680"><nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="index.html"><img src="assets/images/white-logo.svg" alt="logo"></a><div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
+<div class="main-nav"><div class="container mw-1680"><nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="index.html"><img src="{% static '/images/white-logo.svg' %}" alt="logo"></a><div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
 <ul class="navbar-nav me-auto">
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a><ul class="dropdown-menu">
@@ -98,9 +100,9 @@
 </ul>
 </div>
 </div></nav></div></div>
-<div class="mobile-nav"><div class="container"><div class="mobile-menu"><div class="logo"><a href="index.html"><img src="assets/images/white-logo.svg" alt="logo"></a></div></div></div></div>
+<div class="mobile-nav"><div class="container"><div class="mobile-menu"><div class="logo"><a href="index.html"><img src="{% static '/images/white-logo.svg' %}" alt="logo"></a></div></div></div></div>
 </div>
-<div class="page-banner-area bg-black bg-img" data-background="./assets/images/banner-bg-shape.png"><div class="container mw-1680"><div class="page-banner-content">
+<div class="page-banner-area bg-black bg-img" data-background="./{% static '/images/banner-bg-shape.png %}"><div class="container mw-1680"><div class="page-banner-content">
 <h2>سوالات متداول</h2>
 <ul class="ps-0 mb-0 list-unstyled justify-content-center page-breadcrumb d-flex flex-wrap gap-4">
 <li><a href="index.html">صفحه اصلی</a></li>
@@ -131,7 +133,7 @@
 </div></div></div>
 <div class="footer-area pt-100 pb-75 bg-color-030303"><div class="container"><div class="row">
 <div class="col-lg-3 col-sm-6"><div class="footer-single-item style-three">
-<a href="index.html" class="logo"><img src="assets/images/white-logo.svg" alt="white-logo"></a><p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس بگیرید،</p>
+<a href="index.html" class="logo"><img src="{% static '/images/white-logo.svg' %}" alt="white-logo"></a><p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس بگیرید،</p>
 <ul class="social-link ps-0 mb-0 list-unstyled">
 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -167,6 +169,6 @@
 </div></div></div>
 <div class="bg-color-030303"><div class="container"><p class="copy-right style-three">کپی رایت،<span>برای <a href="https://mellatweb.com"> ملت وب </a></span>تمامی حقوق محفوظ است</p></div></div>
 <div class="back-to-top text-center"><i class="icofont-simple-up"></i></div>
-<script src="assets/js/jquery.min.js"></script><script src="assets/js/bootstrap.bundle.min.js"></script><script src="assets/js/jquery.meanmenu.js"></script><script src="assets/js/owl.carousel.min.js"></script><script src="assets/js/scrollcue.js"></script><script src="assets/js/magnific-popup.min.js"></script><script src="assets/js/counterup.min.js"></script><script src="assets/js/waypoints.min.js"></script><script src="assets/js/mixitup.min.js"></script><script src="assets/js/smoothscroll.min.js"></script><script src="assets/js/custom.js"></script>
+<script src="{% static '/js/jquery.min.js' %}"></script><script src="{% static '/js/bootstrap.bundle.min.js' %}"></script><script src="{% static '/js/jquery.meanmenu.js' %}"></script><script src="{% static '/js/owl.carousel.min.js' %}"></script><script src="{% static '/js/scrollcue.js' %}"></script><script src="{% static '/js/magnific-popup.min.js' %}"></script><script src="{% static '/js/counterup.min.js' %}"></script><script src="{% static '/js/waypoints.min.js' %}"></script><script src="{% static '/js/mixitup.min.js' %}"></script><script src="{% static '/js/smoothscroll.min.js' %}"></script><script src="{% static '/js/custom.js' %}"></script>
 </body>
 </html>
