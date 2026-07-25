@@ -1,0 +1,1913 @@
+$body-color: #666666;
+$main-color: #FD6219;
+$optional-color: #DCFD68;
+$heading-color: #030303;
+$white-color: #ffffff;
+$black-color: #000000;
+$transition: all ease .5s;
+$border-radius: 4px;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+/* Max width 767px
+<<<<=====================================================================>>>>*/ 
+@media only screen and (max-width: 767px) {
+
+    body {
+        font-size: 15px;
+    }
+    .ptb-100 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .pt-75 {
+        padding-top: 35px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+    .pt-70 {
+        padding-top: 35px;
+    }
+    .pb-70 {
+        padding-bottom: 35px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .shape {
+        display: none;
+    }
+    .main-section-title {
+        margin: -5px auto 35px;
+        .top-title {
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 25px;
+            line-height: normal;
+        }
+        &.left-align {
+            text-align: center;
+        }
+    }
+    .main-btn {
+        font-size: 14px;
+        padding: 15px 30px;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .main-detail-btn {
+        font-size: 16px;
+    }
+
+    /** Header Area CSS
+    ======================**/
+    .header-left-content {
+        p {
+            font-size: 15px;
+        }
+    }
+    .header-right-content {
+        li {
+            a {
+                font-size: 15px;
+            }
+        }
+    }
+
+    /** Banner Area CSS
+    ======================**/
+    .banner-area {
+        padding-top: 50px;
+        padding-bottom: 90px;
+    }
+    .banner-content {
+        text-align: center;
+        margin-bottom: 30px;
+        h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    .creative-agency {
+        position: unset;
+        p {
+            text-align: center;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    .banner-area-two {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .banner-content-two {
+        margin-bottom: 30px;
+        .target {
+            padding-right: 50px;
+            margin-bottom: 30px;
+            &::before {
+                display: none;
+            }
+        }
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .circle-btn-two {
+            margin-right: 30px;
+        }
+    }
+    .banner-content-three {
+        h1 {
+            font-size: 60px;
+        }
+        .banner-btn {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .agency-info {
+            position: unset;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .banner-img-three {
+        bottom: 0;
+    }
+    .banner-area-three {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
+    .page-banner-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .page-banner-content {
+        h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+    }
+
+    /** Brands Area CSS
+    ======================**/
+    .brands-title {
+        margin-bottom: 30px;
+        span {
+            font-size: 18px;
+        }
+    }
+
+    /** About Us Area CSS
+    ======================**/
+    .about-us-img {
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    .about-us-content {
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .about-list {
+            margin-bottom: 20px;
+            li {
+                font-size: 16px;
+            }
+        }
+    }
+    .about-us-content-two {
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        .mt-40 {
+            margin-top: 20px;
+        }
+    }
+    .about-img-three {
+        margin-bottom: 30px;
+        img {
+            border-radius: 10px;
+        }
+    }
+    .about-content-three {
+        margin-right: 0;
+        h2 {
+            font-size: 25px;
+        }
+        p {
+            font-weight: 500;
+        }
+    }
+
+    /** Section Title Area CSS
+    ============================**/
+    .top-title {
+        font-size: 14px;
+    }
+    .section-title {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        &.style-two {
+            h2 {
+                font-size: 25px;
+            }
+        }
+        &.style-three {
+            h2 {
+                font-size: 25px;
+            }
+        }
+    }
+
+    /** Services Area CSS
+    ============================**/
+    .services-single-item {
+        padding: 25px;
+        p {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    .services-btn {
+        margin-top: 15px;
+    }
+    .services-wrap {
+        margin: 0;
+    }
+    .services-single-item-two {
+        padding: 30px;
+        h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+    }
+    .services-single-item-three {
+        padding: 25px;
+        h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .read-more {
+            font-size: 15px;
+        }
+    }
+    
+    /** Who We Are Area CSS
+    ============================**/
+    .who-we-are-img {
+        margin-right: 0;
+    }
+    .who-we-are-content {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .who-we-are-content-two {
+        margin-right: 0;
+        margin-top: 30px;
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .who-we-are-img-two {
+        margin-right: 0;
+    }
+
+    /** Testimonial Area CSS
+    ============================**/
+    .testimonial-single-item {
+        padding-right: 0;
+        text-align: center;
+        .testimonial-img {
+            margin: auto;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonial-slide {
+        &.owl-theme {
+            .owl-nav  {
+                position: unset;
+                margin-top: 30px !important;
+            }
+        }
+    }
+    .testimonials-single-item-two {
+        margin-left: 0;
+        .review {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .info {
+            h3 {
+                font-size: 18px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        &.style-three {
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+    .testimonial-slide-two {
+        &.owl-theme {
+            .owl-nav {
+                position: unset;
+                margin-top: 20px !important;
+            }
+        }
+    }
+    .testimonials-area-three {
+        padding-top: 60px;
+        &::before {
+            background-color: transparent;
+        }
+    }
+    .testimonial-img-three {
+        margin-left: 0;
+    }
+    
+    /** Case Study Area CSS
+    ============================**/
+    .case-study-content-wrap {
+        .slider {
+            a {
+                .case-study-content {
+                    right: -62px;
+                    bottom: 150px;
+                    transform: rotate(90deg);
+                }
+            }
+            li {
+                &:hover {
+                    flex-grow: 8;
+                }
+            }
+        }
+    }
+    .accordion {
+        &.accordion-content {
+            .accordion-item {
+                .accordion-body {
+                    padding: 0;
+                    padding-top: 15px;
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .faq-img {
+        margin-bottom: 30px;
+    }
+    .accordion.accordion-content .accordion-item .accordion-header .accordion-button .count {
+        margin-left: 5px;
+    }
+    .case-study-single-item-three {
+        margin-bottom: 50px;
+        h3 {
+            a {
+                font-size: 20px;
+            }
+        }
+        .circle-btn {
+            opacity: 1;
+            position: unset;
+            margin-top: 20px;
+        }
+    }
+
+    /** Counter Area CSS
+    ============================**/
+    .counter-single-item {
+        h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+
+    /** Recent Cases Area CSS
+    ============================**/
+    .recent-cases-single-item {
+        padding: 25px;
+        .tag {
+            font-size: 14px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .cases-slide {
+        .owl-nav {
+            position: unset;
+            margin-top: 25px !important;
+        }
+    }
+
+    /** Get In Touch Area CSS
+    ============================**/
+    .get-in-touch-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .get-in-touch-content {
+        text-align: center;
+        h2 {
+            font-size: 25px;
+        }
+    }
+
+    /** Team Area CSS
+    ============================**/
+    .team-single-item {
+        padding: 25px;
+        .info {
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    /** Marquee Area CSS
+    ============================**/
+    .marquee-wrapper {
+        .marquee {
+            a {
+                font-size: 30px;
+                padding: 30px 75px;
+            }
+            h1 {
+                font-size: 85px;
+            }
+        }
+    }
+    .marquee-area-three .row {
+        --bs-gutter-x: 1.5rem;
+        .mt-100 {
+            margin-top: 50px;
+        }
+    }
+    
+    /** Blog Area CSS
+    ============================**/
+    .blog-single-item {
+        padding: 25px;
+        h3 {
+            font-size: 18px;
+        }
+    }
+    .blog-info-content {
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    /** Subscribe Area CSS
+    ============================**/
+    .subscribe-newsletter-content {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 25px;
+        }
+    }
+    .subscribe-newsletter-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .subscribe-newsletter-form {
+        .form-control {
+            height: 60px;
+        }
+        .main-btn {
+            padding: 15px 8px;
+            span {
+                display: none;
+            }
+            i {
+                margin-right: 0;
+            }
+        }
+    }
+
+    /** Footer Area CSS
+    ============================**/
+    .footer-single-item {
+        h3 {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .useful-link {
+            li {
+                a {
+                    font-size: 17px;
+                }
+            }
+        }
+        .contact-info {
+            li {
+                a {
+                    font-size: 17px;
+                }
+            }
+        }
+        &.style-two {
+            h3 {
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+        }
+    }
+    .footer-single-item-three {
+        margin-bottom: 30px;
+        text-align: center;
+        h2 {
+            font-size: 30px;
+        }
+        .social-link {
+            max-width: 100%;
+            text-align: center;
+            li {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+    .service-details-content {
+        h2 {
+            font-size: 25px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+    .sidebar-widget {
+        max-width: 100%;
+    }
+
+    /** Cases Details Area CSS
+    ============================**/
+    .cases-details-top-content {
+        padding: 30px 0;
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    /** Blog Details Area CSS
+    ============================**/
+    .blog-details-content {
+        .blog-details-img {
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 25px;
+        }
+        .mb-60 {
+            margin-bottom: 30px;
+        }
+        blockquote {
+            padding: 20px;
+            img {
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        .tags-share {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    /** Contact main Area CSS
+    ============================**/
+    .contact-us-main-form {
+        padding: 25px;
+        h3 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            .form-control {
+                font-size: 14px;
+                &::placeholder {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .contact-info {
+        margin-right: 0;
+        margin-top: 30px;
+    }
+
+    /** Product Details main Area CSS
+    ============================**/
+    .product-details-content {
+        margin-right: 0;
+        h3 {
+            margin-bottom: 10px;
+        }
+        .price {
+            margin-bottom: 10px;
+        }
+    }
+    .product-info-tabs {
+        .nav-item {
+            margin-left: 18px;
+            .nav-link {
+                font-size: 16px;
+            }
+        }
+    }
+
+    /** Cart Area CSS
+    ============================**/
+    .cart-subtotal {
+        padding: 25px;
+    }
+    .privacy-policy-content {
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    
+    
+    
+    
+    
+}
+
+/* Min width 768px to Max width 991px 
+<<<<=====================================================================>>>>*/ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .ptb-100 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .pt-75 {
+        padding-top: 35px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+    .pt-70 {
+        padding-top: 35px;
+    }
+    .pb-70 {
+        padding-bottom: 35px;
+    }
+    .shape {
+        display: none;
+    }
+   
+    /** Banner Area CSS
+    ======================**/
+    .banner-area {
+        padding-top: 50px;
+        padding-bottom: 90px;
+    }
+    .banner-content {
+        text-align: center;
+        margin-bottom: 30px;
+        h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+    }
+    .creative-agency {
+        position: unset;
+        p {
+            text-align: center;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    .banner-area-two {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .banner-content-two {
+        margin-bottom: 30px;
+        max-width: 100%;
+        .target {
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .circle-btn-two {
+            margin-right: 30px;
+        }
+    }
+    .banner-content-three {
+        h1 {
+            font-size: 140px;
+        }
+        .banner-btn {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .agency-info {
+            position: unset;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .banner-img-three {
+        bottom: 0;
+    }
+    .banner-area-three {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
+    .page-banner-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .page-banner-content {
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+    }
+
+    /** Brands Area CSS
+    ======================**/
+    .brands-title {
+        margin-bottom: 30px;
+        span {
+            font-size: 18px;
+        }
+    }
+
+    /** About Us Area CSS
+    ======================**/
+    .about-us-img {
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    .about-us-content {
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .about-list {
+            margin-bottom: 20px;
+            li {
+                font-size: 16px;
+            }
+        }
+    }
+    .about-us-content-two {
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .mt-40 {
+            margin-top: 20px;
+        }
+    }
+    .about-img-three {
+        margin-bottom: 30px;
+        img {
+            border-radius: 10px;
+        }
+    }
+    .about-content-three {
+        margin-right: 0;
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    /** Section Title Area CSS
+    ============================**/
+    .top-title {
+        font-size: 14px;
+    }
+    .section-title {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        &.style-two {
+            h2 {
+                font-size: 30px;
+            }
+        }
+        &.style-three {
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    /** Services Area CSS
+    ============================**/
+    .services-single-item {
+        padding: 25px;
+        p {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    .services-btn {
+        margin-top: 15px;
+    }
+    .services-wrap {
+        margin: 0;
+    }
+    .services-single-item-two {
+        padding: 30px;
+        h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+    }
+    .services-single-item-three {
+        padding: 30px;
+        h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .read-more {
+            font-size: 15px;
+        }
+    }
+
+    /** Who We Are Area CSS
+    ============================**/
+    .who-we-are-img {
+        margin-right: 0;
+    }
+    .who-we-are-content {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .who-we-are-content-two {
+        margin-right: 0;
+        margin-top: 30px;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .who-we-are-img-two {
+        margin-right: 0;
+    }
+
+    /** Testimonial Area CSS
+    ============================**/
+    .testimonial-single-item {
+        padding-right: 0;
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area-three {
+        padding-top: 60px;
+        &::before {
+            background-color: transparent;
+        }
+    }
+    .testimonials-single-item-two {
+        &.style-three {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+    .testimonial-img-three {
+        margin-left: 0;
+    }
+
+    /** Case Study Area CSS
+    ============================**/
+    .case-study-content-wrap {
+        .slider {
+            li {
+                &:hover {
+                    flex-grow: 5;
+                }
+            }
+        }
+    }
+
+    /** FAQ Area CSS
+    ============================**/
+    .faq-img {
+        margin-bottom: 30px;
+    }
+
+    /** Counter Area CSS
+    ============================**/
+    .counter-single-item {
+        h2 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+
+    /** Recent Cases Area CSS
+    ============================**/
+    .recent-cases-single-item {
+        .tag {
+            font-size: 14px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .cases-slide {
+        .owl-nav {
+            position: unset;
+            margin-top: 25px !important;
+        }
+    }
+    .case-study-single-item-three {
+        margin-bottom: 50px;
+        h3 {
+            a {
+                font-size: 22px;
+            }
+        }
+        .circle-btn {
+            opacity: 1;
+            position: unset;
+            margin-top: 20px;
+        }
+    }
+
+    /** Get In Touch Area CSS
+    ============================**/
+    .get-in-touch-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .get-in-touch-content {
+        text-align: center;
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    /** Team Area CSS
+    ============================**/
+    .team-single-item {
+        padding: 25px;
+        .info {
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    /** Marquee Area CSS
+    ============================**/
+    .marquee-wrapper {
+        .marquee {
+            a {
+                font-size: 30px;
+                padding: 30px 75px;
+            }
+            h1 {
+                font-size: 90px;
+            }
+        }
+    }
+    .marquee-area-three .row {
+        --bs-gutter-x: 1.5rem;
+        .mt-100 {
+            margin-top: 50px;
+        }
+    }
+
+    /** Testimonials Area CSS
+    ============================**/
+    .testimonials-single-item-two {
+        margin-left: 0;
+        .review {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .info {
+            h3 {
+                font-size: 20px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    .testimonial-slide-two {
+        &.owl-theme {
+            .owl-nav {
+                position: unset;
+                margin-top: 20px !important;
+            }
+        }
+    }
+    
+
+    /** Blog Area CSS
+    ============================**/
+    .blog-single-item {
+        padding: 25px;
+        h3 {
+            font-size: 18px;
+        }
+    }
+    .blog-info-content {
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    /** Subscribe Area CSS
+    ============================**/
+    .subscribe-newsletter-content {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .subscribe-newsletter-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .subscribe-newsletter-form {
+        .form-control {
+            height: 60px;
+        }
+        .main-btn {
+            padding: 15px 8px;
+            span {
+                display: none;
+            }
+            i {
+                margin-right: 0;
+            }
+        }
+    }
+
+    /** Footer Area CSS
+    ============================**/
+    .footer-single-item {
+
+        h3 {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .useful-link {
+            li {
+                a {
+                    font-size: 17px;
+                }
+            }
+        }
+        .contact-info {
+            li {
+                a {
+                    font-size: 17px;
+                }
+            }
+        }
+        &.style-two {
+            h3 {
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+        }
+    }
+    .footer-single-item-three {
+        margin-bottom: 30px;
+        text-align: center;
+        h2 {
+            font-size: 40px;
+        }
+        .social-link {
+            max-width: 100%;
+            text-align: center;
+            li {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+
+    /** Service Details Area CSS
+    ============================**/
+    .service-details-content {
+        h2 {
+            font-size: 25px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+    .sidebar-widget {
+        max-width: 100%;
+    }
+
+    /** Cases Details Area CSS
+    ============================**/
+    .cases-details-top-content {
+        padding: 30px 0;
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    /** Blog Details Area CSS
+    ============================**/
+    .blog-details-content {
+        .blog-details-img {
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 25px;
+        }
+        .mb-60 {
+            margin-bottom: 30px;
+        }
+        blockquote {
+            padding: 20px;
+            img {
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        .tags-share {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    /** Contact main Area CSS
+    ============================**/
+    .contact-us-main-form {
+        padding: 25px;
+        h3 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            .form-control {
+                font-size: 14px;
+                &::placeholder {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .contact-info {
+        margin-right: 0;
+        margin-top: 30px;
+    }
+
+    /** Product Details main Area CSS
+    ============================**/
+    .product-details-content {
+        margin-right: 0;
+        h3 {
+            margin-bottom: 10px;
+        }
+        .price {
+            margin-bottom: 10px;
+        }
+    }
+
+    /** Cart Area CSS
+    ============================**/
+    .cart-subtotal {
+        padding: 25px;
+    }
+    
+    
+  
+    
+
+}
+
+/* Min width 992px to Max width 1199px 
+<<<<=====================================================================>>>>*/ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+    .navbar-area {
+        .navbar-brand {
+            margin-left: 30px;
+        }
+        &.style-two {
+            .nav-right-options {
+                .main-btn {
+                    padding: 10.5px 18px;
+                    i {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .main-nav {
+        .navbar {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        margin-right: 10px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .nav-right-options {
+            .language {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    /** Banner Area CSS
+    ======================**/
+    .banner-content {
+        max-width: 650px;
+        h1 {
+            font-size: 60px;
+        }
+    }
+    .banner-area-two {
+        padding-top: 100px;
+    }
+    .banner-content-two {
+        h2 {
+            font-size: 50px;
+            margin-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+    }
+    .banner-content-three {
+        h1 {
+            font-size: 140px;
+        }
+        .agency-info {
+            background-color: $white-color;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 360px;
+            bottom: -174px;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+        .banner-btn {
+            top: 4px;
+            left: 200px;
+        }
+    }
+    .page-banner-area {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    /** About Us Area CSS
+    ======================**/
+    .about-us-img {
+        margin-left: 0;
+    }
+    .about-us-content {
+        h2 {
+            font-size: 35px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .about-list {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+    }
+    .about-content-three {
+        margin-right: 0;
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    /** Services Area CSS
+    ============================**/
+    .services-single-item {
+        padding: 25px;
+        p {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    .services-btn {
+        margin-top: 15px;
+    }
+    .services-wrap {
+        margin: 0;
+    }
+    .services-single-item-two {
+        padding: 30px;
+        h3 {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+    }
+
+    /** Who We Are Area CSS
+    ============================**/
+    .who-we-are-img {
+        margin-right: 0;
+    }
+    .who-we-are-content {
+        h2 {
+            font-size: 39px;
+        }
+    }
+    .who-we-are-content-two {
+        margin-right: 0;
+        padding-top: 100px;
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    /** Testimonial Area CSS
+    ============================**/
+    .testimonial-single-item {
+        padding-right: 0;
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area-three {
+        &::before {
+            display: none;
+        }
+    }
+
+    /** Case Study Area CSS
+    ============================**/
+    .case-study-content-wrap {
+        .slider {
+            li {
+                &:hover {
+                    flex-grow: 5;
+                }
+            }
+        }
+    }
+
+    /** Footer Area CSS
+    ============================**/
+    .footer-single-item {
+        p {
+            font-size: 17px;
+        }
+        &.style-two {
+            h3 {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    /** Counter Area CSS
+    ============================**/
+    .counter-single-item {
+        h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+    }
+
+    /** Recent Cases Area CSS
+    ============================**/
+    .recent-cases-single-item {
+        padding: 30px;
+    }
+    .get-in-touch-area {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .get-in-touch-area {
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    /** Testimonials Area CSS
+    ============================**/
+    .testimonials-single-item-two {
+        margin-left: 0;
+        .review {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .info {
+            h3 {
+                font-size: 20px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    .testimonial-slide-two {
+        &.owl-theme {
+            .owl-nav {
+                position: unset;
+                margin-top: 20px !important;
+            }
+        }
+    }
+    .main-nav {
+        .nav-right-options {
+            .social-link {
+                li {
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .marquee-area-three .row {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    /** Cases Details Area CSS
+    ============================**/
+    .cases-details-top-content {
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    /** Blog Details Area CSS
+    ============================**/
+    .blog-details-content {
+        h2 {
+            font-size: 40px;
+        }
+        blockquote {
+            p {
+                font-size: 25px;
+            }
+        }
+    }
+
+    /** Contact main Area CSS
+    ============================**/
+    .contact-info {
+        margin-right: 0;
+    }
+
+    /** Product Details Area CSS
+    ============================**/
+    .product-details-content {
+        margin-right: 0;
+    }
+
+    /** Cart Area CSS
+    ============================**/
+    .cart-subtotal {
+        padding: 25px;
+    }
+     
+    
+
+}
+
+/* Min width 1200px to Max width 1320px 
+<<<<=====================================================================>>>>*/ 
+@media only screen and (min-width: 1200px) and (max-width: 1550px) {
+
+    .navbar-area {
+        .navbar-brand {
+            margin-left: 100px;
+        }
+        &.style-two {
+            .nav-right-options {
+                .main-btn {
+                    padding: 10.5px 18px;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    /** Banner Area CSS
+    ======================**/
+    .banner-content {
+        max-width: 830px;
+    }
+    .banner-content-three {
+        h1 {
+            font-size: 190px;
+        }
+        .agency-info {
+            background-color: $white-color;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 360px;
+            bottom: -174px;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+        .banner-btn {
+            top: 4px;
+            left: 200px;
+        }
+    }
+
+    /** Services Area CSS
+    ============================**/
+    .services-single-item {
+        padding: 25px;
+        p {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        ul {
+            li {
+                font-size: 17px;
+            }
+        }
+    }
+    .services-single-item-two {
+        h3 {
+            font-size: 20px;
+        }
+    }
+    
+    /** Recent Cases Area CSS
+    ============================**/
+    .get-in-touch-area {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /** Blog Area CSS
+    ============================**/
+    .blog-single-item {
+        padding: 25px;
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .blog-info-content {
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    /** Testimonials Area CSS
+    ============================**/
+    .testimonials-area-three {
+        &::before {
+            display: none;
+        }
+    }
+
+    /** Contact main Area CSS
+    ============================**/
+    .contact-info {
+        margin-right: 0;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) Only Mobil Menu
+===========================================================*/
+@media only screen and (max-width: 991px) {
+    
+    /* Navbar Style
+    <<<<=====================>>>>*/ 
+    .navbar-area {
+        z-index: 2;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .dropdown-toggle {
+            &::after {
+                display: none;
+            }
+        }
+        .mobile-nav {
+            display: block;
+            .mobile-menu {
+                position: relative;
+                .logo {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 120px;
+                }
+                &.mean-container {
+                    .mean-nav {
+                        margin-top: 46px;
+                        background-color: $white-color;
+                        box-shadow: $box-shadow;
+                        ul {
+                            border: none !important;
+                            background-color: $white-color;
+                            li {
+                                a {
+                                    border-top-color: #efefef;
+                                    color: $heading-color !important;
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                    &.active {
+                                        color: $main-color !important;
+                                    }
+                                    &.mean-expand {
+                                        width: 100%;
+                                        height: 28px;
+                                        text-align: left;
+                                        padding: 11px!important;
+                                        background: transparent !important;
+                                        border: {
+                                            right: none !important;
+                                            bottom: none !important;
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .meanmenu-reveal {
+                        top: 0;
+                        padding: 0;
+                        width: 35px;
+                        height: 30px;
+                        padding-top: 6px;
+                        color: $main-color;
+                        span {
+                            background: $main-color;
+                            height: 4px;
+                            margin-top: -6px;
+                            border-radius: 0;
+                            position: relative;
+                            top: 8px;
+                        }
+                    }
+                    .mean-bar {
+                        background: transparent;
+                        position: absolute;
+                        z-index: 2;
+                        padding: 0;
+                    }
+                }
+            }
+            .others-options {
+                display: none !important;
+            }
+        }
+        .main-nav {
+            display: none !important;
+        }
+        .nav-right-options {
+            position: absolute;
+            top: 7px;
+            left: 45px;
+            .language {
+                padding-right: 0;
+                margin-bottom: 0;
+                list-style: none;
+                position: relative;
+                padding-right: 22px;
+                margin-left: 35px;
+                .form-select {
+                    padding: 0;
+                    padding-left: 20px;
+                    background-color: transparent;
+                    background-position: left -4px center;
+                    border: none;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: $white-color;
+                    cursor: pointer;
+                    background-image: url(../../assets/images/arrow-down.svg);
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    option {
+                        color: $heading-color;
+                    }
+                }
+                i {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    font-size: 16px;
+                    color: $white-color
+                }
+            }
+            .src-btn {
+                background-color: transparent;
+                font-size: 16px;
+            }
+            .menu-btn {
+                background-color: transparent;
+                font-size: 16px;
+                margin-right: 20px;
+                margin-left: 10px;
+            }
+        }
+        &.style-two {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+        &.style-three {
+            border-bottom: 1px solid #dddddd;
+        }
+    }
+    .mean-container {
+        .mean-nav {
+            ul {
+                li {
+                    a {
+                        &.mean-expand {
+                            top: -6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .search-offcanvas {
+        .offcanvas-header {
+            padding: 15px;
+        }
+        .offcanvas-body {
+            padding: 15px;
+            padding-top: 0;
+        }
+    }
+    .search-offcanvas {
+        height: 140px !important;
+    }
+    .about-us-img-two {
+        margin-right: 0;
+        margin-left:0;
+    }
+}
+
+/* Medium devices 1400px
+===========================================================*/
+@media only screen and (min-width: 1400px) {
+
+    .mw-1680 {
+        max-width: 1680px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+}
