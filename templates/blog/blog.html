@@ -1,19 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><!----- Shered In Mellatweb.com --->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
-<link rel="stylesheet" href="assets/css/meanmenu.css">
-<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/css/icofont.min.css">
-<link rel="stylesheet" href="assets/css/font-awesome-pro.css">
-<link rel="stylesheet" href="assets/css/scrollcue.css">
-<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="{% static '/css/bootstrap.rtl.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/meanmenu.css' %}">
+<link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/font-awesome-pro.css' %}">
+<link rel="stylesheet" href="{% static '/css/scrollcue.css' %}">
+<link rel="stylesheet" href="{% static '/css/magnific-popup.min.css' %}">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+<link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
 <title>Stir - قالب HTML آژانس چند منظوره</title>
 </head>
 <body>
@@ -30,7 +32,7 @@
 <div class="ball"></div>
 </div></div>
 <div class="navbar-area bg-black">
-<div class="main-nav"><div class="container mw-1680"><nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="index.html"><img src="assets/images/white-logo.svg" alt="logo"></a><div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
+<div class="main-nav"><div class="container mw-1680"><nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="index.html"><img src="{% static '/images/white-logo.svg' %}" alt="logo"></a><div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
 <ul class="navbar-nav me-auto">
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a><ul class="dropdown-menu">
@@ -98,9 +100,9 @@
 </ul>
 </div>
 </div></nav></div></div>
-<div class="mobile-nav"><div class="container"><div class="mobile-menu"><div class="logo"><a href="index.html"><img src="assets/images/white-logo.svg" alt="logo"></a></div></div></div></div>
+<div class="mobile-nav"><div class="container"><div class="mobile-menu"><div class="logo"><a href="index.html"><img src="{% static '/images/white-logo.svg' %}" alt="logo"></a></div></div></div></div>
 </div>
-<div class="page-banner-area bg-black bg-img" data-background="./assets/images/banner-bg-shape.png"><div class="container mw-1680"><div class="page-banner-content">
+<div class="page-banner-area bg-black bg-img" data-background="./assets/images/banner-bg-shape.png' %}"><div class="container mw-1680"><div class="page-banner-content">
 <h2>وبلاگ</h2>
 <ul class="ps-0 mb-0 list-unstyled justify-content-center page-breadcrumb d-flex flex-wrap gap-4">
 <li><a href="index.html">صفحه اصلی</a></li>
@@ -109,63 +111,63 @@
 </div></div></div>
 <div class="blog-area ptb-100"><div class="container"><div class="row align-items-center justify-content-center">
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-1.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-1.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">یک روز در قلمروهای مد پنهان مد</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-2.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-2.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">وبلاگ عالی یک عکاس عروسی</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-5.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-5.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">تسلط بر ذهن آگاهی: راهنمای بهزیستی روزانه</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-6.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-6.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">ظهور مد پایدار به سبک سازگار با محیط زیست</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-7.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-7.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">نوآوری های فناوری در سفر: بازتعریف روشی که کاوش می کنیم</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-8.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-8.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">هنر داستان سرایی: ساختن روایت های متقاعد کننده</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-9.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-9.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">پیمایش از راه دور: نکاتی برای بهره وری</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-10.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-10.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
 <h3><a href="single-blog.html">فراتر از بشقاب: کاوش در آشپزی در سراسر جهان</a></h3>
 </div></div>
 <div class="col-xl-4 col-md-6"><div class="blog-single-item style-two">
-<a href="single-blog.html" class="d-block blog-img"><img src="assets/images/blog-11.jpg" alt="blog"></a><ul class="ps-0 list-unstyled date">
+<a href="single-blog.html" class="d-block blog-img"><img src="{% static '/images/blog-11.jpg' %}" alt="blog"></a><ul class="ps-0 list-unstyled date">
 <li><span>27 نوامبر 2023</span></li>
 <li>3 Minutes Read</li>
 </ul>
@@ -189,7 +191,7 @@
 </ul>
 <p>خواه افزایش دید بازار، بهبود کارایی عملیاتی یا اجرای فناوری‌های پیشرفته باشد، آژانس ما طیف گسترده‌ای از خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره مالی...</p>
 <div class="d-flex align-items-center info">
-<div class="flex-shrink-0"><img src="assets/images/testimonial-3.png" class="rounded-circle" alt="testimonial"></div>
+<div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle" alt="testimonial"></div>
 <div class="flex-grow-1 ms-3">
 <h3>برندی رو</h3>
 <span>رهبر بازاریابی در Technlogia</span>
@@ -206,7 +208,7 @@
 </ul>
 <p>خواه افزایش دید بازار، بهبود کارایی عملیاتی یا اجرای فناوری‌های پیشرفته باشد، آژانس ما طیف گسترده‌ای از خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره مالی...</p>
 <div class="d-flex align-items-center info">
-<div class="flex-shrink-0"><img src="assets/images/testimonial-3.png" class="rounded-circle" alt="testimonial"></div>
+<div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle" alt="testimonial"></div>
 <div class="flex-grow-1 ms-3">
 <h3>برندی رو</h3>
 <span>رهبر بازاریابی در Technlogia</span>
@@ -215,7 +217,7 @@
 </div>
 </div>
 </div>
-<div class="col-lg-4"><div class="testimonial-img-three mt-4 mt-lg-0"><img src="assets/images/testimonial-6.jpg" alt="testimonial"></div></div>
+<div class="col-lg-4"><div class="testimonial-img-three mt-4 mt-lg-0"><img src="{% static '/images/testimonial-6.jpg' %}" alt="testimonial"></div></div>
 </div></div></div>
 <div class="contact-us-area ptb-100"><div class="container">
 <div class="section-title">
@@ -232,7 +234,7 @@
 </div></div>
 <div class="footer-area pt-100 pb-75 bg-color-030303"><div class="container"><div class="row">
 <div class="col-lg-3 col-sm-6"><div class="footer-single-item style-three">
-<a href="index.html" class="logo"><img src="assets/images/white-logo.svg" alt="white-logo"></a><p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس بگیرید،</p>
+<a href="index.html" class="logo"><img src="{% static '/images/white-logo.svg' %}" alt="white-logo"></a><p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس بگیرید،</p>
 <ul class="social-link ps-0 mb-0 list-unstyled">
 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -268,6 +270,6 @@
 </div></div></div>
 <div class="bg-color-030303"><div class="container"><p class="copy-right style-three">کپی رایت،<span>برای <a href="https://mellatweb.com"> ملت وب </a></span>تمامی حقوق محفوظ است</p></div></div>
 <div class="back-to-top text-center"><i class="icofont-simple-up"></i></div>
-<script src="assets/js/jquery.min.js"></script><script src="assets/js/bootstrap.bundle.min.js"></script><script src="assets/js/jquery.meanmenu.js"></script><script src="assets/js/owl.carousel.min.js"></script><script src="assets/js/scrollcue.js"></script><script src="assets/js/magnific-popup.min.js"></script><script src="assets/js/counterup.min.js"></script><script src="assets/js/waypoints.min.js"></script><script src="assets/js/mixitup.min.js"></script><script src="assets/js/smoothscroll.min.js"></script><script src="assets/js/custom.js"></script>
+<script src="{% static '/js/jquery.min.js' %}"></script><script src="{% static '/js/bootstrap.bundle.min.js' %}"></script><script src="{% static '/js/jquery.meanmenu.js' %}"></script><script src="{% static '/js/owl.carousel.min.js' %}"></script><script src="{% static '/js/scrollcue.js' %}"></script><script src="{% static '/js/magnific-popup.min.js' %}"></script><script src="{% static '/js/counterup.min.js' %}"></script><script src="{% static '/js/waypoints.min.js' %}"></script><script src="{% static '/js/mixitup.min.js' %}"></script><script src="{% static '/js/smoothscroll.min.js' %}"></script><script src="{% static '/js/custom.js' %}"></script>
 </body>
 </html>
