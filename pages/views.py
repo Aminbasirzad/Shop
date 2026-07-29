@@ -7,7 +7,7 @@ def about(request):
   return render(request, 'pages/about-us.html')
 
 def team(request):
-  return render('pages/team.html')
+  return render(request,'pages/team.html')
 
 def faq(request):
   return render(request, 'pages/faq.html')
