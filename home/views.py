@@ -10,4 +10,7 @@ def home_v2(request):
 def home_v3(request):
   return render(request, 'home/index-3.html')
 
+def base(request):
+  return render(request, 'home/base.html')
+
 
