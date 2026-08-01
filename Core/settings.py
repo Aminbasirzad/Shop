@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     
     'home',
     'shop',
+    'accounts',
+    'blog',
+    'case_study',
+    'pages',
+    'services',
+    
 ]
 
 MIDDLEWARE = [
@@ -122,3 +128,5 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
   BASE_DIR / 'static'
 ]
+
+MEDIA_ROOT = '/media/'
