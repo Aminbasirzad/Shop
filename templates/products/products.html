@@ -180,7 +180,7 @@
         <div class="col-lg-3 col-sm-6 mix monitor monitor mobile">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{% static '/images/product-1.jpg' %}"
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{{ product.image.url }}"
                   alt="product">{{ product.name }}</a>
               <ul class="ps-0 mb-0 list-unstyled social-link">
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i>{{ product.name }}</a></li>
