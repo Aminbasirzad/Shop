@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load cart_filters %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><!----- Shered In Mellatweb.com --->
 
@@ -92,7 +92,7 @@
                   <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
                   <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link active">سبد خرید</a></li>
                   <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                  
+
                 </ul>
               </li>
               <li class="nav-item">
@@ -150,69 +150,59 @@
             <h3>سبد خرید شما</h3>
             <h3>3 Items</h3>
           </div>
+          {% for product in products %}
           <div class="d-sm-flex align-items-center cart-single-item">
-            <div class="flex-shrink-0"><img src="{% static '/images/cart-1.jpg' %}" alt="cart"></div>
+            {% with img=product.image.first %}
+            {% if img %}
+            <div class="flex-shrink-0"><img src="{{ img.image.url }}" alt="{{ product.name }}"></div>
+            {% endif %}
+            {% endwith %}
             <div class="flex-grow-1">
               <div class="d-flex justify-content-between align-items-center p-4">
                 <div>
-                  <h3>روتر بیسیم</h3>
-                  <span class="color">رنگ سفید</span>
-                  <div class="input-counter d-flex justify-content-between">
-                    <span class="minus-btn"><i class="fa-regular fa-minus"></i></span><input type="text" value="1"><span
-                      class="plus-btn"><i class="fa-regular fa-plus"></i></span>
-                  </div>
+                  <h3>{{ product.name }}</h3>
+                  <span class="color">{{ product.category.name }}</span>
+                  <form method="POST" action="{% url 'update_cart' product.id %}" class="cart-quantity-form">
+                    {% csrf_token %}
+
+                    <div class="input-counter d-flex justify-content-between">
+
+                    <button type="button" class="minus-btn">
+                      <i class="fa-regular fa-minus"></i>
+                    </button>
+
+                    <input
+                      type="number"
+                      name="quantity"
+                      value="{{ cart|get_item:product.id }}"
+                      min="1"
+                    >
+
+                     <button type="button" class="plus-btn">
+                      <i class="fa-regular fa-plus"></i>
+                         </button>
+
+                         </div>
+                    </form>
                 </div>
                 <div class="text-end">
-                  <button class="close-btn"><i class="fa-regular fa-xmark fa-fw"></i></button><span
-                    class="d-block price">$25.00</span>
+                  <a href="{% url 'remove_from_cart' product.id %}" class="close-btn">
+                   <i class="fa-regular fa-xmark fa-fw"></i>
+                    </a>
+                    <span class="d-block price">
+                   ${{ product.final_price }}
+                 </span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="d-sm-flex align-items-center cart-single-item">
-            <div class="flex-shrink-0"><img src="{% static '/images/cart-2.jpg' %}" alt="cart"></div>
-            <div class="flex-grow-1">
-              <div class="d-flex justify-content-between align-items-center p-4">
-                <div>
-                  <h3>هدفون بلوتوث</h3>
-                  <span class="color">رنگ سیاه</span>
-                  <div class="input-counter d-flex justify-content-between">
-                    <span class="minus-btn"><i class="fa-regular fa-minus"></i></span><input type="text" value="1"><span
-                      class="plus-btn"><i class="fa-regular fa-plus"></i></span>
-                  </div>
-                </div>
-                <div class="text-end">
-                  <button class="close-btn"><i class="fa-regular fa-xmark fa-fw"></i></button><span
-                    class="d-block price">$25.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-sm-flex align-items-center cart-single-item">
-            <div class="flex-shrink-0"><img src="{% static '/images/cart-3.jpg' %}" alt="cart"></div>
-            <div class="flex-grow-1">
-              <div class="d-flex justify-content-between align-items-center p-4">
-                <div>
-                  <h3>پنکه رومیزی AC DC</h3>
-                  <span class="color">رنگ سفید</span>
-                  <div class="input-counter d-flex justify-content-between">
-                    <span class="minus-btn"><i class="fa-regular fa-minus"></i></span><input type="text" value="1"><span
-                      class="plus-btn"><i class="fa-regular fa-plus"></i></span>
-                  </div>
-                </div>
-                <div class="text-end">
-                  <button class="close-btn"><i class="fa-regular fa-xmark fa-fw"></i></button><span
-                    class="d-block price">$25.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          
+          
         <div class="col-lg-4">
           <div class="cart-subtotal">
             <div class="d-flex justify-content-between mb-3">
               <h3>جمع فرعی</h3>
-              <h3>$60.00</h3>
+              <h3>${{ total_price }}</h3>
             </div>
             <span class="shipping">حمل دریایی</span>
             <div class="mb-4">
@@ -224,13 +214,16 @@
             <span class="change">تغییر آدرس</span>
             <div class="d-flex justify-content-between mb-4">
               <h3>جمع</h3>
-              <h3>$290.00</h3>
+              <h3>${{ total_price }}</h3>
+             
             </div>
+            {% endfor %}
             <a href="{% url 'checkout' %}" class="main-btn w-100 text-center">به پرداخت ادامه دهید</a>
           </div>
         </div>
       </div>
     </div>
+     
   </div>
   <div class="footer-area pt-100 pb-75 bg-color-030303">
     <div class="container">
@@ -303,6 +296,29 @@
   <script src="{% static '/js/mixitup.min.js' %}"></script>
   <script src="{% static '/js/smoothscroll.min.js' %}"></script>
   <script src="{% static '/js/custom.js' %}"></script>
+  <script>
+document.querySelectorAll('.cart-quantity-form').forEach(function(form) {
+
+    const minusBtn = form.querySelector('.minus-btn');
+    const plusBtn = form.querySelector('.plus-btn');
+    const input = form.querySelector('input[name="quantity"]');
+
+    plusBtn.addEventListener('click', function() {
+        input.value = parseInt(input.value) + 1;
+        form.submit();
+    });
+
+    minusBtn.addEventListener('click', function() {
+        let quantity = parseInt(input.value);
+
+        if (quantity > 1) {
+            input.value = quantity - 1;
+            form.submit();
+        }
+    });
+
+});
+</script>
 </body>
 
 </html>

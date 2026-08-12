@@ -92,7 +92,8 @@
                   <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
                   <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
                   <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                  <li class="nav-item"><a href="{% url 'product_detail' product.id %}" class="nav-link active">جزئیات محصول</a>
+                  <li class="nav-item"><a href="{% url 'product_detail' product.id %}" class="nav-link active">جزئیات
+                      محصول</a>
                   </li>
                 </ul>
               </li>
@@ -147,60 +148,79 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <div class="product-details-img"><img src="{% static '/images/product-details-img.jpg' %}"
+          {% with img=product.image.first %}
+          {% if img %}
+          <div class="product-details-img"><img src="{{ img.image.url }}"
               alt="product-details-img"></div>
+              {% endif %}
+            {% endwith %}
         </div>
         <div class="col-lg-6">
           <div class="product-details-content mt-4 mt-lg-0">
-            <h3>روتر وای فای بسیار جدیدترین مدل</h3>
-            <span class="price"><del>$30.00</del>$25.00</span>
+            <h3>{{ product.name }}</h3>
+            <span class="price"><del>${{ product.price }}</del>${{ product.discounted_percentage }}</span>
             <div class="d-flex align-items-center gap-2 review">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                 class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(5)</span>
             </div>
-            <p>مد شکلی همیشه در حال تکامل از ابراز وجود است که فراتر از زمان و فرهنگ است. این یک شکل هنری پویا است که به
-              افراد اجازه می‌دهد شخصیت، خلاقیت و هویت خود را از طریق لباس، لوازم جانبی و انتخاب سبک به نمایش بگذارند.
-            </p>
-            <span class="sub-title">رنگ سفید</span>
+            <p>{{ product.description }}</p>
+            <span class="sub-title">رنگ</span>
             <ul class="d-flex color-grid ps-0 list-unstyled">
+              {% for variant in product.variants.all %}
               <li>
-                <input type="radio" name="color" id="red" value="red"><label for="red"><span class="red"></span></label>
+                <input type="radio" name="color" id="color-{{ variant.id }}" value="{{ variant.color.name }}"><label
+                  for="color-{{ variant.id }}"><span class=""
+                    style="background-color: {{ variant.color.code }};"></span></label>
               </li>
-              <li>
-                <input type="radio" name="color" id="green"><label for="green"><span class="green"></span></label>
-              </li>
-              <li>
-                <input type="radio" name="color" id="yellow"><label for="yellow"><span class="yellow"></span></label>
-              </li>
-              <li>
-                <input type="radio" name="color" id="olive"><label for="olive"><span class="olive"></span></label>
-              </li>
-              <li>
-                <input type="radio" name="color" id="orange"><label for="orange"><span class="orange"></span></label>
-              </li>
+              {% endfor %}
             </ul>
-            <span class="sub-title">تعداد</span>
-            <div class="d-flex justify-content-xl-between align-items-center flex-wrap gap-2 quantity-wrap">
-              <div class="input-counter d-flex justify-content-between">
-                <span class="minus-btn"><i class="fa-regular fa-minus"></i></span><input type="text" value="1"><span
-                  class="plus-btn"><i class="fa-regular fa-plus"></i></span>
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+              {% csrf_token %}
+
+              <span class="sub-title">تعداد</span>
+
+              <div class="d-flex justify-content-xl-between align-items-center flex-wrap gap-2 quantity-wrap">
+
+                <div class="input-counter d-flex justify-content-between">
+
+                  <span class="minus-btn">
+                    <i class="fa-regular fa-minus"></i>
+                  </span>
+
+                  <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}">
+
+                  <span class="plus-btn">
+                    <i class="fa-regular fa-plus"></i>
+                  </span>
+
+                </div>
+
+                <button type="submit" class="main-btn active">
+                  افزودن به سبد خرید
+                </button>
+
+                <a href="{% url 'checkout' %}" class="main-btn">
+                  هم اکنون خریداری کنید
+                </a>
+
+                <a href="{% url 'cart' %}" class="wish-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </a>
+
               </div>
-              <a href="{% url 'cart' %}" class="main-btn active">افزودن به سبد خرید</a><a href="{% url 'checkout' %}"
-                class="main-btn">هم اکنون خریداری کنید</a><a href="{% url 'cart' %}" class="wish-btn"><i
-                  class="fa-regular fa-heart"></i></a>
-            </div>
+            </form>
             <ul class="features-list ps-0 list-unstyled">
               <li>
-                <span>SKU:</span>روتر بیسیم
+                <span>SKU:</span>{{ product.sku }}
               </li>
               <li>
-                <span>فروشنده:</span>السی
+                <span>فروشنده:</span>{{ product.seller }}
               </li>
               <li>
-                <span>دسترسی:</span>ذخیره موجود
+                <span>دسترسی:</span>{{ product.stock }}
               </li>
               <li>
-                <span>دسته بندی ها:</span>فناوری، بی سیم، رسمی، تجاری، هدیه، پرفروش ترین
+                <span>دسته بندی ها:</span>{{ product.category.name }}
               </li>
             </ul>
             <ul class="social-link d-flex gap-3 align-items-center ps-0 mb-0 list-unstyled">
@@ -344,12 +364,13 @@
         <div class="col-lg-3 col-sm-6">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{% static '/images/product-5.jpg' %}"
-                  alt="product"></a>
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img
+                  src="{% static '/images/product-5.jpg' %}" alt="product"></a>
               <ul class="ps-0 mb-0 list-unstyled social-link">
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i></a></li>
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i
+                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
               </ul>
             </div>
             <h3><a href="{% url 'product_detail' product.id %}">Smart TRE 5744U6322 (77 سانتی متر)</a></h3>
@@ -359,12 +380,13 @@
         <div class="col-lg-3 col-sm-6">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{% static '/images/product-6.jpg' %}"
-                  alt="product"></a>
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img
+                  src="{% static '/images/product-6.jpg' %}" alt="product"></a>
               <ul class="ps-0 mb-0 list-unstyled social-link">
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i></a></li>
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i
+                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
               </ul>
             </div>
             <h3><a href="{% url 'product_detail' product.id %}">Smart TRE 5744U6322 (77 سانتی متر)</a></h3>
@@ -374,12 +396,13 @@
         <div class="col-lg-3 col-sm-6">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{% static '/images/product-7.jpg' %}"
-                  alt="product"></a>
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img
+                  src="{% static '/images/product-7.jpg' %}" alt="product"></a>
               <ul class="ps-0 mb-0 list-unstyled social-link">
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i></a></li>
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i
+                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
               </ul>
             </div>
             <h3><a href="{% url 'product_detail' product.id %}">Smart TRE 5744U6322 (77 سانتی متر)</a></h3>
@@ -389,12 +412,13 @@
         <div class="col-lg-3 col-sm-6 ">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{% static '/images/product-8.jpg' %}"
-                  alt="product"></a>
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img
+                  src="{% static '/images/product-8.jpg' %}" alt="product"></a>
               <ul class="ps-0 mb-0 list-unstyled social-link">
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i></a></li>
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i
+                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
               </ul>
             </div>
             <h3><a href="v">Smart TRE 5744U6322 (77 سانتی متر)</a></h3>

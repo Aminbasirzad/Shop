@@ -92,7 +92,7 @@
                   <li class="nav-item"><a href="{% url 'products' %}" class="nav-link active">محصولات</a></li>
                   <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
                   <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                  <li class="nav-item"><a href="{% url 'product_detail' 1 %}" class="nav-link">جزئیات محصول</a></li>
+                  <li class="nav-item"><a href="{% url 'product_detail' 0 %}" class="nav-link">جزئیات محصول</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -180,19 +180,25 @@
         <div class="col-lg-3 col-sm-6 mix monitor monitor mobile">
           <div class="product-single-item">
             <div class="product-img">
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{{ product.image.url }}"
-                  alt="product">{{ product.name }}</a>
+              {% with img=product.image.first %}
+              {% if img %}
+              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{{ img.image.url }}"
+                  alt="products">{{ product.name }}</a>
+              {% endif %}
+              {% endwith %}
               <ul class="ps-0 mb-0 list-unstyled social-link">
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i>{{ product.name }}</a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i>{{ product.name
+                    }}</a></li>
                 <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li><a href="{% url 'product_detail' product.id %}"><i
+                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
               </ul>
             </div>
             <h3><a href="{% url 'product_detail' product.id %}">{{ product.description }}</a></h3>
-            <span><del>${{ product.original_price }}</del>${{ product.discounted_price }}</span>
+            <span><del>${{ product.price }}</del>${{ product.discounted_percentage }}</span>
           </div>
         </div>
-        
+
         {% endfor %}
         <div class="col-md-12">
           <div class="pagination">
