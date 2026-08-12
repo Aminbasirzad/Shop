@@ -81,9 +81,6 @@ def remove_from_cart(request, id):
   return redirect('cart')
 
 def checkout(request):
-    print("METHOD:", request.method)
-    print("POST:", request.POST)
-    print("CART:", request.session.get('cart', {}))
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
@@ -103,6 +100,7 @@ def checkout(request):
             total_price += product.final_price * quantity
 
         order = Order.objects.create(
+           user=request.user if request.user.is_authenticated else None,
             name=full_name,
             phone=phone,
             address=address,

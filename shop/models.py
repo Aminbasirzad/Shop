@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 
 
@@ -80,6 +81,7 @@ class ProductVariant(models.Model):
     return f"{self.product.name} - {self.color.name}"
 
 class Order(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders', null=True, blank=True)
   name = models.CharField(max_length=100, verbose_name='نام')
   phone = models.CharField(max_length=20, verbose_name='شماره تماس')
   address = models.TextField(verbose_name='آدرس')
