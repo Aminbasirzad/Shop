@@ -154,11 +154,17 @@
               <li><a href="{% url 'sign_up' %}">ثبت نام</a></li>
             </ul>
             <h3>وارد حساب کاربری خود شوید</h3>
-            <form>
-              <div class="form-group mb-4"><input type="email" class="form-control" placeholder="پست الکترونیک"></div>
+            <form action="{% url 'sign_in' %}" method="POST">
+              {% csrf_token %}
+              {% if error %}
+              <div class="alert alert-danger">
+                {{ error }}
+              </div>
+              {% endif %}
+              <div class="form-group mb-4"><input type="email" name="email" class="form-control" placeholder="پست الکترونیک"></div>
               <div class="form-group mb-4">
                 <div class="password-wrapper">
-                  <input type="password" class="form-control" id="password"><i
+                  <input type="password" name="password" class="form-control" id="password"><i
                     class="fa fa-eye-slash password-toggle-icon" aria-hidden="true"></i>
                 </div>
               </div>

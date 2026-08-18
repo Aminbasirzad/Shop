@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  html
+<h1>جزئیات سفارش #{{ order.id }}</h1>
+
+<p>نام: {{ order.name }}</p>
+
+<p>شماره تماس: {{ order.phone }}</p>
+
+<p>آدرس: {{ order.address }}</p>
+
+<p>مبلغ کل: {{ order.total_price }}</p>
+
+<hr>
+
+<h2>محصولات سفارش</h2>
+
+{% for item in order.items.all %}
+
+    <h3>{{ item.product.name }}</h3>
+
+    <p>تعداد: {{ item.quantity }}</p>
+
+    <p>قیمت: {{ item.price }}</p>
+
+    <hr>
+
+{% endfor %}
+</body>
+</html>

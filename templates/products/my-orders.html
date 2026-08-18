@@ -1,0 +1,50 @@
+
+
+<div class="container py-5">
+
+    <h2>سفارش‌های من</h2>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+            <div class="border p-3 mb-3">
+
+                <h4>سفارش شماره {{ order.id }}</h4>
+
+                <p>
+                    تاریخ:
+                    {{ order.created_at }}
+                </p>
+
+                <p>
+                    مبلغ:
+                    {{ order.total_price }}
+                </p>
+
+                <h5>محصولات:</h5>
+
+                {% for item in order.items.all %}
+
+                    <p>
+                        {{ item.product.name }}
+                        ×
+                        {{ item.quantity }}
+                        -
+                        {{ item.price }}
+                    </p>
+
+                {% endfor %}
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>هنوز سفارشی ثبت نکرده‌اید.</p>
+
+    {% endif %}
+
+</div>
+
