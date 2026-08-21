@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 
@@ -65,3 +65,8 @@ def sign_in(request):
         request,
         'account/sign-in.html'
     )
+
+
+def sign_out(request):
+    logout(request)
+    return redirect('home')

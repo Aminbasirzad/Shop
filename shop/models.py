@@ -64,7 +64,7 @@ class ProductImage(models.Model):
 
 class Color(models.Model):
   name = models.CharField(max_length=50)
-  code = models.CharField(max_length=20, help_text=000000, verbose_name='کد رنگ')
+  code = models.CharField(max_length=20, help_text='000000#', verbose_name='کد رنگ')
 
   def __str__(self):
     return self.name
@@ -99,3 +99,35 @@ class OrderItem(models.Model):
 
   def __str__(self):
     return f"{self.product.name} - {self.quantity}"
+
+
+
+class Review(models.Model):
+  product = models.ForeignKey(
+    Product,
+    on_delete=models.CASCADE,
+    related_name='reviews'
+    )
+  
+  user = models.ForeignKey(
+    User,
+    on_delete=models.CASCADE
+  )
+
+  rating = models.PositiveIntegerField(default=5)
+  comment = models.TextField()
+  created_at = models.DateTimeField(auto_now_add=True)
+
+  class Meta:
+    constraints = [
+      models.UniqueConstraint(
+        fields=['product', 'user'],
+        name='unique_product_user_review'
+      )
+    ]
+
+  def __str__(self):
+    return f"{self.user.username} - {self.product.name}"
+
+
+

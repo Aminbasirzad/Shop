@@ -59,48 +59,80 @@
                   <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link">گواهینامه ها</a></li>
                   <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle active">احراز هویت</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a href="{% url 'sign_in' %}" class="nav-link active">ورود</a></li>
-                      <li class="nav-item"><a href="{% url 'sign_up' %}" class="nav-link">ثبت نام</a></li>
-                    </ul>
+                    {% if user.is_authenticated %}
+
+                  <li class="nav-item">
+                    <p style="color:red">{{ usr.username }} - {{ user.first_name }} - {{ user.is_authenticated }}</p>
+                    <a href="#" class="nav-link">
+                      سلام {{ user.first_name }}
+                    </a>
                   </li>
-                  <li class="nav-item"><a href="{% url 'privacy_policy' %}" class="nav-link">سیاست حفظ حریم خصوصی</a>
+
+                  <li class="nav-item">
+                    <a href="{% url 'my_orders' %}" class="nav-link">
+                      سفارش‌های من
+                    </a>
                   </li>
-                  <li class="nav-item"><a href="{% url 'terms_conditions' %}" class="nav-link">شرایط و ضوابط</a></li>
-                  <li class="nav-item"><a href="{% url 'page_not_found' %}" class="nav-link">خطا</a></li>
-                  <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">با ما تماس بگیرید</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
+
+                  <li class="nav-item">
+                    <a href="{% url 'sign_out' %}" class="nav-link">
+                      خروج
+                    </a>
                   </li>
-                </ul>
+
+                  {% else %}
+
+                  <li class="nav-item">
+                    <a href="{% url 'sign_in' %}" class="nav-link">
+                      ورود
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{% url 'sign_up' %}" class="nav-link">
+                      ثبت نام
+                    </a>
+                  </li>
+
+                  {% endif %}
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
-                  <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
-                  <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                </ul>
+              <li class="nav-item"><a href="{% url 'privacy_policy' %}" class="nav-link">سیاست حفظ حریم خصوصی</a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">وبلاگ</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">وبلاگ</a></li>
-                  <li class="nav-item"><a href="{% url 'blog_detail' %}" class="nav-link">صفحه وبلاگ واحد</a></li>
-                </ul>
-              </li>
+              <li class="nav-item"><a href="{% url 'terms_conditions' %}" class="nav-link">شرایط و ضوابط</a></li>
+              <li class="nav-item"><a href="{% url 'page_not_found' %}" class="nav-link">خطا</a></li>
+              <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">با ما تماس بگیرید</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">خدمات</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
+                <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
+                <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
+                <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
+                <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">وبلاگ</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">وبلاگ</a></li>
+                <li class="nav-item"><a href="{% url 'blog_detail' %}" class="nav-link">صفحه وبلاگ واحد</a></li>
+              </ul>
+            </li>
             </ul>
             <div class="nav-right-options d-flex align-items-center">
               <div class="language position-relative z-1">
@@ -161,7 +193,8 @@
                 {{ error }}
               </div>
               {% endif %}
-              <div class="form-group mb-4"><input type="email" name="email" class="form-control" placeholder="پست الکترونیک"></div>
+              <div class="form-group mb-4"><input type="email" name="email" class="form-control"
+                  placeholder="پست الکترونیک"></div>
               <div class="form-group mb-4">
                 <div class="password-wrapper">
                   <input type="password" name="password" class="form-control" id="password"><i

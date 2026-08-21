@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, OrderItem, Order
+from .models import Product, OrderItem, Order, Review
 from django.contrib.auth.decorators import login_required
 
 def add_to_cart(request, id):
@@ -40,8 +40,15 @@ def update_cart(request, id):
   return redirect('cart')
 
 def product_detail(request, id):
+  #پیدا کردن محصول مورد نظر اگر وجود نداشت خطای 404 نمایش داده میشود
   product = get_object_or_404(Product, id=id)
-  return render(request, 'products/product-details.html', {'product':product})
+  #دریافت محصولات فعال از همان دسته بندی
+  #حداکثر 4 محصول برای بخش <<شما همچنان شاید دوست داشته باشین
+  related_products = Product.objects.filter(
+     category=product.category,
+     is_active=True
+  ).exclude(id=product.id)[:4]
+  return render(request, 'products/product-details.html', {'product':product, 'related_products':related_products})
 
 def products(request):
   products = Product.objects.all()
@@ -127,6 +134,8 @@ def checkout(request):
 
 @login_required
 def my_orders(request):
+
+   #دریافت سفارش های کاربر
    orders = Order.objects.filter(user=request.user).order_by('-created_at')
    return render(request, 'products/my-orders.html', {'orders':orders})
 
@@ -137,3 +146,73 @@ def order_detail(request, id):
 
 def order_success(request):
    return render(request, 'products/order-success.html')
+
+
+@login_required
+def add_review(request, id):
+   #پیدا کردن محصولی که کاربر میخواهد برای آن ثبت نظر کند
+   product = get_object_or_404(Product, id=id)
+
+   if request.method == 'POST':
+      #دریافت امتیاز و متن
+      rating = int(request.POST.get('rating', 5))
+      comment = request.POST.get('comment')
+
+      #ذخیره در دیتابیس
+      Review.objects.create(
+         product=product,
+         user=request.user,
+         rating=rating,
+         comment=comment
+      )
+
+      return redirect('product_detail', id=product.id)
+   return redirect('product_detail', id=product.id)
+
+
+
+@login_required
+def edit_review(request, id):
+
+   #پیدا کردن نظر مورد نظر براساس ID
+   #فقط صاحب همان نظر اجازه ویرایش آن را دارد
+   review = get_object_or_404(
+      Review,
+      id=id,
+      user=request.user
+   )
+
+   if request.method == 'POST':
+
+      #دریافت امتیاز و متن جدید از فرم
+      review.rating = int(request.POST.get('rating', 5))
+      review.comment = request.POST.get('comment')
+
+      #ذخیره تغییرات در دیتابیس
+      review.save()
+
+      return redirect(
+         'product_detail',
+         id=review.product.id
+      )
+
+   return render(request, 'products/edit-review.html', {'review':review})
+
+
+@login_required
+def delete_review(request, id):
+   
+   #پیدا کردن نظر مورد نظر
+   #فقط صاحب همان نظر اجازه ویرایش آن را دارد
+   review = get_object_or_404(
+      Review,
+      id=id,
+      user=request.user
+   )
+
+   product_id = review.product.id
+
+   if request.method == 'POST':
+      review.delete()
+
+   return redirect('product_detail', id=product_id)
