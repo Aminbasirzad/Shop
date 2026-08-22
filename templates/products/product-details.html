@@ -259,22 +259,28 @@
           tabindex="0">
           <table class="table table-bordered">
             <tbody>
-              <tr>
-                <td>روتر وای فای</td>
-                <td>340 X 450</td>
-              </tr>
-              <tr>
-                <td>روتر وای فای</td>
-                <td>340 X 450</td>
-              </tr>
-              <tr>
-                <td>روتر وای فای</td>
-                <td>340 X 450</td>
-              </tr>
-              <tr>
-                <td>روتر وای فای</td>
-                <td>340 X 450</td>
-              </tr>
+              <table class="table table-bordered">
+                <tbody>
+
+                  {% for specification in product.specifications.all %}
+
+                  <tr>
+                    <td>{{ specification.title }}</td>
+                    <td>{{ specification.value }}</td>
+                  </tr>
+
+                  {% empty %}
+
+                  <tr>
+                    <td colspan="2">
+                      هنوز مشخصاتی برای این محصول ثبت نشده است.
+                    </td>
+                  </tr>
+
+                  {% endfor %}
+
+                </tbody>
+              </table>
             </tbody>
           </table>
         </div>

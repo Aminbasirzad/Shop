@@ -20,18 +20,45 @@ class Category(models.Model):
     return self.name
 
 class Product(models.Model):
-  category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='products', verbose_name='دسته')
-  name = models.CharField(max_length=255, verbose_name='نام محصول')
+  category = models.ForeignKey(
+    Category,
+    on_delete=models.PROTECT,
+    related_name='products',
+    verbose_name='دسته'
+    )
+  name = models.CharField(
+    max_length=255,
+    verbose_name='نام محصول'
+    )
   slug = models.SlugField(unique=True)
   description = models.TextField(verbose_name='توضیحات')
-  price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='قیمت اصلی')
-  discounted_percentage = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, verbose_name='درصد تخفیف')
-  stock = models.PositiveIntegerField(default=0, verbose_name='موجودی')
+  price = models.DecimalField(
+    max_digits=10,
+    decimal_places=2,
+    verbose_name='قیمت اصلی'
+    )
+  discounted_percentage = models.DecimalField(
+    max_digits=10,
+    decimal_places=2,
+    blank=True, null=True,
+    verbose_name='درصد تخفیف'
+    )
+  stock = models.PositiveIntegerField(
+    default=0,
+    verbose_name='موجودی'
+    )
   is_active = models.BooleanField(default=True)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
-  sku = models.CharField(max_length=50, unique=True, verbose_name='کد محصول')
-  seller = models.CharField(max_length=100, default='فروشگاه من')
+  sku = models.CharField(
+    max_length=50,
+    unique=True,
+    verbose_name='کد محصول'
+    )
+  seller = models.CharField(
+    max_length=100,
+    default='فروشگاه من'
+    )
 
   class Meta:
     ordering = ['-created_at']
@@ -53,49 +80,134 @@ class Product(models.Model):
       return self.price * (1 - self.discounted_percentage / 100)
     return self.price
 
+
+class ProductSpecification(models.Model):
+  #محصولی که این مشخصات مربوط به آن است 
+  product = models.ForeignKey(
+    Product,
+    on_delete=models.CASCADE,
+    related_name='specifications'
+  )
+
+  title = models.CharField(
+    max_length=100,
+    verbose_name='عنوان'
+    )
+
+  value = models.CharField(
+    max_length=255,
+    verbose_name='مقدار'
+  )
+
+  class Meta:
+    verbose_name = 'مشخصات محصول'
+    verbose_name_plural = 'مشخصات محصولات'
+
+
+  def __str__(self):
+    return f"{self.product.name} - {self.title}"
+  
+
 class ProductImage(models.Model):
-  product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='image')
-  image = models.ImageField(upload_to='products/', blank=True, null=True)
-  is_main = models.BooleanField(default=False, verbose_name='تصویر اصلی')
+  product = models.ForeignKey(
+    Product,
+    on_delete=models.CASCADE,
+    related_name='image'
+    )
+  image = models.ImageField(
+    upload_to='products/',
+    blank=True,
+    null=True
+    )
+  is_main = models.BooleanField(
+    default=False,
+    verbose_name='تصویر اصلی'
+    )
 
   def __str__(self):
     return f"Image for {self.product.name}"
 
 
 class Color(models.Model):
-  name = models.CharField(max_length=50)
-  code = models.CharField(max_length=20, help_text='000000#', verbose_name='کد رنگ')
+  name = models.CharField(
+    max_length=50
+    )
+  code = models.CharField(
+    max_length=20,
+    help_text='000000#',
+    verbose_name='کد رنگ'
+    )
 
   def __str__(self):
     return self.name
 
 
 class ProductVariant(models.Model):
-  product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='variants')
-  color = models.ForeignKey(Color, on_delete=models.PROTECT)
-  price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+  product = models.ForeignKey(
+    Product,
+    on_delete=models.CASCADE,
+    related_name='variants'
+    )
+  color = models.ForeignKey(
+    Color,
+    on_delete=models.PROTECT
+    )
+  price = models.DecimalField(
+    max_digits=10,
+    decimal_places=2,
+    null=True, blank=True
+    )
   stock = models.PositiveIntegerField(default=0)
-  image = models.ImageField(upload_to='products/variants/', null=True, blank=True)
+  image = models.ImageField(
+    upload_to='products/variants/',
+    null=True, blank=True
+    )
 
   def __str__(self):
     return f"{self.product.name} - {self.color.name}"
 
 class Order(models.Model):
-  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders', null=True, blank=True)
-  name = models.CharField(max_length=100, verbose_name='نام')
-  phone = models.CharField(max_length=20, verbose_name='شماره تماس')
+  user = models.ForeignKey(
+    User,
+    on_delete=models.CASCADE,
+    related_name='orders',
+    null=True,
+    blank=True
+    )
+  name = models.CharField(
+    max_length=100,
+    verbose_name='نام'
+    )
+  phone = models.CharField(
+    max_length=20,
+    verbose_name='شماره تماس'
+    )
   address = models.TextField(verbose_name='آدرس')
-  total_price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name='مبلغ کل')
+  total_price = models.DecimalField(
+    max_digits=12,
+    decimal_places=2,
+    verbose_name='مبلغ کل'
+    )
   created_at = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return f"{self.name} - {self.id}"
 
 class OrderItem(models.Model):
-  order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
-  product = models.ForeignKey(Product, on_delete=models.PROTECT)
+  order = models.ForeignKey(
+    Order,
+    on_delete=models.CASCADE,
+    related_name='items'
+    )
+  product = models.ForeignKey(
+    Product,
+    on_delete=models.PROTECT
+    )
   quantity = models.PositiveBigIntegerField(default=1)
-  price = models.DecimalField(max_digits=12, decimal_places=2)
+  price = models.DecimalField(
+    max_digits=12,
+    decimal_places=2
+    )
 
   def __str__(self):
     return f"{self.product.name} - {self.quantity}"
