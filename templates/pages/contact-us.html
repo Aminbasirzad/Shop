@@ -147,36 +147,62 @@
         <h3>یک پیام فرستاد</h3>
         <div class="row">
           <div class="col-lg-8 col-xl-9">
-            <form>
+            <form action="{% url 'contact' %}" method="POST">
+              {% csrf_token %}
+
               <div class="row">
+
                 <div class="col-lg-6">
-                  <div class="form-group mb-4"><input type="text" class="form-control" placeholder="نام کوچک"></div>
+                  <div class="form-group mb-4">
+                    <input type="text" name="name" class="form-control" placeholder="نام کوچک" required>
+                  </div>
                 </div>
+
                 <div class="col-lg-6">
-                  <div class="form-group mb-4"><input type="text" class="form-control" placeholder="نام خانوادگی"></div>
+                  <div class="form-group mb-4">
+                    <input type="text" class="form-control" placeholder="نام خانوادگی">
+                  </div>
                 </div>
+
                 <div class="col-lg-6">
-                  <div class="form-group mb-4"><input type="email" class="form-control" placeholder="ایمیل شما"></div>
+                  <div class="form-group mb-4">
+                    <input type="email" name="email" class="form-control" placeholder="ایمیل شما" required>
+                  </div>
                 </div>
+
                 <div class="col-lg-6">
-                  <div class="form-group mb-4"><input type="text" class="form-control" placeholder="موضوع"></div>
+                  <div class="form-group mb-4">
+                    <input type="text" name="subject" class="form-control" placeholder="موضوع" required>
+                  </div>
                 </div>
+
                 <div class="col-lg-12">
-                  <div class="form-group mb-4"><textarea class="form-control" placeholder="پیام خود را اینجا بنویسید..."
-                      cols="30" rows="5"></textarea></div>
+                  <div class="form-group mb-4">
+                    <textarea name="message" class="form-control" placeholder="پیام خود را اینجا بنویسید..." cols="30"
+                      rows="5" required></textarea>
+                  </div>
                 </div>
+
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><label
-                        class="form-check-label" for="flexCheckDefault">برای دفعه بعد که نظر می دهم نام، ایمیل و وب سایت
-                        من را در این مرورگر ذخیره کنید.</label>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        برای دفعه بعد که نظر می دهم نام، ایمیل و وب سایت
+                        من را در این مرورگر ذخیره کنید.
+                      </label>
                     </div>
                   </div>
                 </div>
+
                 <div class="col-lg-12">
-                  <div class="form-group mb-0"><button class="main-btn" type="submit">ارسال یک پیام</button></div>
+                  <div class="form-group mb-0">
+                    <button class="main-btn" type="submit">
+                      ارسال یک پیام
+                    </button>
+                  </div>
                 </div>
+
               </div>
             </form>
           </div>
