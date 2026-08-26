@@ -374,28 +374,50 @@
         <span class="top-title">وقت ملاقات</span>
         <h2>دوست دارم از شما بشنوم تماس بگیرید!</h2>
       </div>
-      <form class="appointment-form style-two">
+      <form class="appointment-form style-two" action="{% url 'contact' %}" method="POST">
+
+        {% csrf_token %}
+
         <div class="row">
+
           <div class="col-lg-6">
-            <div class="form-group"><input type="text" class="form-control" placeholder="اسم شما *"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group"><input type="email" class="form-control" placeholder="ایمیل شما *"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group"><input type="text" class="form-control" placeholder="آنچه شما علاقه دارید *"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group"><input type="text" class="form-control" placeholder="بودجه پروژه *"></div>
-          </div>
-          <div class="col-lg-12">
-            <div class="form-group"><textarea cols="30" rows="6" class="form-control" placeholder="پیام *"></textarea>
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="نام شما *" required>
             </div>
           </div>
-          <div class="col-lg-12"><button type="submit"
-              class="circle-btn d-inline-block text-decoration-none bg-transparent d-flex align-items-center"><span>پیام
-                فرستادن</span><i class="fa-solid fa-arrow-up-right"></i></button></div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="ایمیل شما *" required>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="form-group">
+              <input type="text" name="subject" class="form-control" placeholder="موضوع *" required>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="form-group">
+              <textarea name="message" cols="30" rows="6" class="form-control" placeholder="پیام خود را بنویسید *"
+                required></textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <button type="submit"
+              class="circle-btn d-inline-block text-decoration-none bg-transparent d-flex align-items-center">
+
+              <span>ارسال پیام</span>
+
+              <i class="fa-solid fa-arrow-up-right"></i>
+
+            </button>
+          </div>
+
         </div>
+
       </form>
     </div>
   </div>

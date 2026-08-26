@@ -147,6 +147,13 @@
         <h3>یک پیام فرستاد</h3>
         <div class="row">
           <div class="col-lg-8 col-xl-9">
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-success">
+            {{ message }}
+          </div>
+          {% endfor %}
+          {% endif %}
             <form action="{% url 'contact' %}" method="POST">
               {% csrf_token %}
 

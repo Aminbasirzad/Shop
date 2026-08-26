@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.contrib import messages
 from .models import ContactMessage
 from shop.models import Review
 
@@ -34,6 +34,11 @@ def contact(request):
       email=email,
       subject=subject,
       message=message
+    )
+
+    messages.success(
+      request,
+      "پیام شما با موفقیت ارسال شد"
     )
 
     return redirect('contact')
