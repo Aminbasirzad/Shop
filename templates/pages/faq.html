@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
   <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
-  <title>Stir - قالب HTML آژانس چند منظوره</title>
+  <title>سوالات متداول | ShopFlow</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
               <li class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">آژانس خلاق</a></li>
+                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">خانه</a></li>
                   <li class="nav-item"><a href="{% url 'home_v2' %}" class="nav-link">آژانس بازرگانی</a></li>
                   <li class="nav-item"><a href="{% url 'home_v3' %}" class="nav-link">آژانس دیجیتال</a></li>
                 </ul>
@@ -54,9 +54,7 @@
                 <a href="#" class="nav-link dropdown-toggle active">صفحات</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">درباره ما</a></li>
-                  <li class="nav-item"><a href="{% url 'team' %}" class="nav-link">تیم</a></li>
                   <li class="nav-item"><a href="{% url 'faq' %}" class="nav-link active">سوالات متداول</a></li>
-                  <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link">گواهینامه ها</a></li>
                   <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle">احراز هویت</a>
                     <ul class="dropdown-menu">
@@ -72,17 +70,11 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
                   </li>
                 </ul>
               </li>
@@ -103,13 +95,7 @@
               </li>
             </ul>
             <div class="nav-right-options d-flex align-items-center">
-              <div class="language position-relative z-1">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>انگلیسی</option>
-                  <option value="1">عربی</option>
-                  <option value="2">چین</option>
-                </select><i class="fa-light fa-globe"></i>
-              </div>
+              
               <ul class="social-link ps-0 mb-0 list-unstyled">
                 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -130,7 +116,7 @@
       </div>
     </div>
   </div>
-  <div class="page-banner-area bg-black bg-img" data-background="./{% static '/images/banner-bg-shape.png' %}">
+  <div class="page-banner-area bg-black bg-img" data-background="{% static '/images/banner-bg-shape.png' %}">
     <div class="container mw-1680">
       <div class="page-banner-content">
         <h2>سوالات متداول</h2>
@@ -148,12 +134,12 @@
           <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><span
                 class="d-sm-flex align-items-center"><span class="flex-shrink-0"><span
-                    class="count">01</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>تفاوت بین آژانس خلاق و
-                    آژانس بازاریابی چیست؟</span></span></span></button></h2>
+                    class="count">01</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span> چطور میتونم از ShopFlow
+                    خرید کنم؟</span></span></span></button></h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p>موفقیت شما اولویت ماست ما دستاوردهای خود را با داستان های موفقیت مشتریانمان می سنجیم. از طریق ارتباط
-                بی‌وقفه، توجه دقیق به جزئیات، و اشتیاق به کمال، تلاش می‌کنیم از انتظارات شما فراتر برویم.</p>
+              <p>کافی است محصول مورد نظر خود را از بخش محصولات انتخاب کنید، آن را به سبد خرید اضافه کنید و پس از بررسی
+                سفارش مراحل پرداخت و ثبت سفارش را تکمیل کنید.</p>
             </div>
           </div>
         </div>
@@ -161,12 +147,12 @@
           <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
               aria-controls="collapseTwo"><span class="d-sm-flex align-items-center"><span class="flex-shrink-0"><span
-                    class="count">02</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>تفاوت بین رسانه و آژانس
-                    خلاق چیست؟</span></span></span></button></h2>
+                    class="count">02</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>چه روش هایی برای پرداخت
+                    وجود دارد؟</span></span></span></button></h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p>موفقیت شما اولویت ماست ما دستاوردهای خود را با داستان های موفقیت مشتریانمان می سنجیم. از طریق ارتباط
-                بی‌وقفه، توجه دقیق به جزئیات، و اشتیاق به کمال، تلاش می‌کنیم از انتظارات شما فراتر برویم.</p>
+              <p>در ShopFlow می توانید هزینه سفارش خود را از طریق روش هی پرداخت ارائه شده در صفحه تسویه حساب پرداخت کنید
+                پس از پرداخت موفق، سفارش شما ثبت و برای ارسال آماده است.</p>
             </div>
           </div>
         </div>
@@ -174,12 +160,12 @@
           <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
               aria-controls="collapseThree"><span class="d-sm-flex align-items-center"><span class="flex-shrink-0"><span
-                    class="count">03</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>تفاوت بین رسانه و آژانس
-                    خلاق چیست؟</span></span></span></button></h2>
+                    class="count">03</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>سفارش های من چه زمانی
+                    ارسال می شود؟</span></span></span></button></h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p>موفقیت شما اولویت ماست ما دستاوردهای خود را با داستان های موفقیت مشتریانمان می سنجیم. از طریق ارتباط
-                بی‌وقفه، توجه دقیق به جزئیات، و اشتیاق به کمال، تلاش می‌کنیم از انتظارات شما فراتر برویم.</p>
+              <p>پس از ثبت و تایید سفارش، محصول در سریع ترین زمان ممکن آماده ارسال می شود.زمان تحویل بسته به مقصد و روش
+                ارسال انتخاب شده متفاوت است.</p>
             </div>
           </div>
         </div>
@@ -187,12 +173,12 @@
           <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
               aria-controls="collapseFour"><span class="d-sm-flex align-items-center"><span class="flex-shrink-0"><span
-                    class="count">04</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>تفاوت آژانس خلاق و
-                    استودیو چیست؟</span></span></span></button></h2>
+                    class="count">04</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>چطور میتونم وضیعیت سفارش
+                    خود را پیگیری کنم؟</span></span></span></button></h2>
           <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p>موفقیت شما اولویت ماست ما دستاوردهای خود را با داستان های موفقیت مشتریانمان می سنجیم. از طریق ارتباط
-                بی‌وقفه، توجه دقیق به جزئیات، و اشتیاق به کمال، تلاش می‌کنیم از انتظارات شما فراتر برویم.</p>
+              <p>پس از ثبت سفارش، می توانید از اطلاعات سفارش خود برای پیگیری وضیعیت آن استفاده کنید.در صورت نیاز نیز می
+                توانید با پشتیبانی ShopFlow در ارتباط باشید.</p>
             </div>
           </div>
         </div>
@@ -200,12 +186,12 @@
           <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
               aria-controls="collapseFive"><span class="d-sm-flex align-items-center"><span class="flex-shrink-0"><span
-                    class="count">05</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>چه کسی مسئول محصول
-                    خلاقانه یک آژانس است؟</span></span></span></button></h2>
+                    class="count">05</span></span><span class="flex-grow-1 mt-3 mt-sm-0"><span>چطور میتونم با پشتیبانی
+                    ShopFlow تماس بگیرم؟</span></span></span></button></h2>
           <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p>موفقیت شما اولویت ماست ما دستاوردهای خود را با داستان های موفقیت مشتریانمان می سنجیم. از طریق ارتباط
-                بی‌وقفه، توجه دقیق به جزئیات، و اشتیاق به کمال، تلاش می‌کنیم از انتظارات شما فراتر برویم.</p>
+              <p>برای ارتباط با پشتیبانی می‌توانید از طریق صفحه «تماس با ما» پیام خود را ارسال کنید. تیم پشتیبانی
+                ShopFlow درخواست شما را بررسی و در اولین فرصت پاسخ خواهد داد</p>
             </div>
           </div>
         </div>
@@ -219,8 +205,10 @@
           <div class="footer-single-item style-three">
             <a href="{% url 'home' %}" class="logo"><img src="{% static '/images/white-logo.svg' %}"
                 alt="white-logo"></a>
-            <p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس
-              بگیرید،</p>
+            <p>
+              در ShopFlow تلاش می‌کنیم خریدی ساده، سریع و مطمئن را برای شما فراهم کنیم.
+              محصولات باکیفیت را بررسی کنید و خرید خود را با اطمینان انجام دهید.
+            </p>
             <ul class="social-link ps-0 mb-0 list-unstyled">
               <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -244,17 +232,17 @@
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
             <h3>با ما تماس بگیرید</h3>
-            <p class="mb-3">خیابان Samwell، Trankturt 2589 نیویورک.</p>
+            <p class="mb-3">برای دریافت راهنمایی و پشتیبانی با ما در ارتباط باشید..</p>
             <ul class="contact-info ms-0">
-              <li><a href="mailto:information@stir.com">information@stir.com</a></li>
-              <li><a href="tel:+52883256953129">+5288 32569 53129</a></li>
+              <li><a href="mailto:information@stir.com">info@ShopFlow.com</a></li>
+              <li><a href="tel:+52883256953129">+12345678</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
             <h3>مشترک ما شوید</h3>
-            <p>برای به روز رسانی های بعدی در خبرنامه ما مشترک شوید. نگران نباشید ما آدرس ایمیل شما را اسپم نمی کنیم</p>
+            <p>برای دریافت آخرین اخبار و تخفیف ها و محصولات جدید در خبرنامه ما عضو شوید</p>
             <form class="position-relative z-1">
               <input type="text" class="form-control" placeholder="ایمیل خود را وارد کنید"><button type="submit"
                 class="p-0 bg-transparent border-0 send-btn position-absolute top-50 end-0 translate-middle-y"><i
@@ -267,8 +255,9 @@
   </div>
   <div class="bg-color-030303">
     <div class="container">
-      <p class="copy-right style-three">کپی رایت،<span>برای <a href="https://mellatweb.com"> ملت وب </a></span>تمامی
-        حقوق محفوظ است</p>
+      <p class="copy-right style-three">
+        © 2026 <span>ShopFlow</span> - تمامی حقوق محفوظ است.
+      </p>
     </div>
   </div>
   <div class="back-to-top text-center"><i class="icofont-simple-up"></i></div>

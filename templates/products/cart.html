@@ -72,17 +72,11 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
                   </li>
                 </ul>
               </li>
@@ -104,13 +98,7 @@
               </li>
             </ul>
             <div class="nav-right-options d-flex align-items-center">
-              <div class="language position-relative z-1">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>انگلیسی</option>
-                  <option value="1">عربی</option>
-                  <option value="2">چین</option>
-                </select><i class="fa-light fa-globe"></i>
-              </div>
+              
               <ul class="social-link ps-0 mb-0 list-unstyled">
                 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -148,7 +136,7 @@
         <div class="col-lg-8">
           <div class="d-flex justify-content-between cart-title">
             <h3>سبد خرید شما</h3>
-            <h3>3 Items</h3>
+            <h3> Items</h3>
           </div>
           {% for product in products %}
           <div class="d-sm-flex align-items-center cart-single-item">
@@ -196,6 +184,8 @@
               </div>
             </div>
           </div>
+            {% endfor %}
+
           
           
         <div class="col-lg-4">
@@ -204,20 +194,19 @@
               <h3>جمع فرعی</h3>
               <h3>${{ total_price }}</h3>
             </div>
-            <span class="shipping">حمل دریایی</span>
+            <span class="shipping">روش ارسال</span>
             <div class="mb-4">
-              <label class="radio-button-container">نرخ ثابت: 60.00 دلار<input type="radio" checked name="radio"><span
-                  class="checkmark"></span></label><label class="radio-button-container">وانت محلی: 80.00 دلار<input
+              <label class="radio-button-container" >هزار تومان - 100 ارسال عادی<input type="radio" checked name="radio"><span
+                  class="checkmark"></span></label><label class="radio-button-container"> هزار تومان- 180 ارسال سریع<input
                   type="radio" name="radio"><span class="checkmark"></span></label>
             </div>
-            <p>گزینه های حمل و نقل در حین تسویه حساب به روز می شود.</p>
+            <p>هزینه و زمان ارسال در مرحله تسویه حساب مشخص می شود.</p>
             <span class="change">تغییر آدرس</span>
             <div class="d-flex justify-content-between mb-4">
               <h3>جمع</h3>
               <h3>${{ total_price }}</h3>
              
             </div>
-            {% endfor %}
             <a href="{% url 'checkout' %}" class="main-btn w-100 text-center">به پرداخت ادامه دهید</a>
           </div>
         </div>

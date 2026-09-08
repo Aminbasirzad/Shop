@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
   <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
-  <title>Stir - قالب HTML آژانس چند منظوره</title>
+  <title>محصولات | ShopFlow</title>
 </head>
 
 <body>
@@ -45,44 +45,30 @@
               <li class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">آژانس خلاق</a></li>
-                  <li class="nav-item"><a href="{% url 'home_v2' %}" class="nav-link">آژانس بازرگانی</a></li>
-                  <li class="nav-item"><a href="{% url 'home_v3' %}" class="nav-link">آژانس دیجیتال</a></li>
+                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link"> خانه</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle">صفحات</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">درباره ما</a></li>
-                  <li class="nav-item"><a href="{% url 'team' %}" class="nav-link">تیم</a></li>
                   <li class="nav-item"><a href="{% url 'faq' %}" class="nav-link">سوالات متداول</a></li>
-                  <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link">گواهینامه ها</a></li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link dropdown-toggle">احراز هویت</a>
+                    <a href="#" class="nav-link dropdown-toggle">حساب کاربری</a>
                     <ul class="dropdown-menu">
                       <li class="nav-item"><a href="{% url 'sign_in' %}" class="nav-link">ورود</a></li>
                       <li class="nav-item"><a href="{% url 'sign_up' %}" class="nav-link">ثبت نام</a></li>
                     </ul>
-                  </li>
-                  <li class="nav-item"><a href="{% url 'privacy_policy' %}" class="nav-link">سیاست حفظ حریم خصوصی</a>
-                  </li>
-                  <li class="nav-item"><a href="{% url 'terms_conditions' %}" class="nav-link">شرایط و ضوابط</a></li>
-                  <li class="nav-item"><a href="{% url 'page_not_found' %}" class="nav-link">خطا</a></li>
-                  <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">با ما تماس بگیرید</a></li>
+
+                  <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">تماس با ما</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
                   </li>
                 </ul>
               </li>
@@ -91,7 +77,7 @@
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'products' %}" class="nav-link active">محصولات</a></li>
                   <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
-                  <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
+                  <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">تصویه حساب</a></li>
                   <li class="nav-item"><a href="{% url 'product_detail' 0 %}" class="nav-link">جزئیات محصول</a></li>
                 </ul>
               </li>
@@ -104,13 +90,7 @@
               </li>
             </ul>
             <div class="nav-right-options d-flex align-items-center">
-              <div class="language position-relative z-1">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>انگلیسی</option>
-                  <option value="1">عربی</option>
-                  <option value="2">چین</option>
-                </select><i class="fa-light fa-globe"></i>
-              </div>
+              
               <ul class="social-link ps-0 mb-0 list-unstyled">
                 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -164,7 +144,7 @@
             <ul
               class="ps-0 mb-0 list-unstyled d-flex justify-content-md-end align-items-center flex-wrap gap-3 mt-4 mt-md-0">
               <li><button class="filter-btn bg-transparent fw-bold">فیلتر +</button></li>
-              <li><span>نمایش 12 محصول از 48 محصول</span></li>
+              <li><span>نمایش {{ products|length }} محصول</span></li>
               <li><select class="form-select border-0 default-sorting" aria-label="Default select example">
                   <option selected>مرتب سازی پیش فرض</option>
                   <option value="1">گوشی های هوشمند</option>
@@ -176,29 +156,60 @@
         </div>
       </div>
       <div class="row justify-content-center" id="Container">
+        html
         {% for product in products %}
-        <div class="col-lg-3 col-sm-6 mix monitor monitor mobile">
+        <div class="col-lg-3 col-sm-6 mix monitor mobile">
           <div class="product-single-item">
+
             <div class="product-img">
+
               {% with img=product.image.first %}
               {% if img %}
-              <a href="{% url 'product_detail' product.id %}" class="d-block"><img src="{{ img.image.url }}"
-                  alt="products">{{ product.name }}</a>
+              <a href="{% url 'product_detail' product.id %}" class="d-block">
+                <img src="{{ img.image.url }}" alt="{{ product.name }}">
+              </a>
               {% endif %}
               {% endwith %}
+
               <ul class="ps-0 mb-0 list-unstyled social-link">
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-heart"></i>{{ product.name
-                    }}</a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i class="fa-regular fa-eye"></i></a></li>
-                <li><a href="{% url 'product_detail' product.id %}"><i
-                      class="fa-sharp fa-solid fa-arrows-rotate"></i></a></li>
+                <li>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <i class="fa-regular fa-heart"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <i class="fa-regular fa-eye"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <i class="fa-sharp fa-solid fa-arrows-rotate"></i>
+                  </a>
+                </li>
               </ul>
+
             </div>
-            <h3><a href="{% url 'product_detail' product.id %}">{{ product.description }}</a></h3>
-            <span><del>${{ product.price }}</del>${{ product.discounted_percentage }}</span>
+
+            <h3>
+              <a href="{% url 'product_detail' product.id %}">
+                {{ product.name }}
+              </a>
+            </h3>
+
+            <span>
+              {% if product.discounted_percentage %}
+              <del>${{ product.price }}</del>
+              ${{ product.final_price }}
+              {% else %}
+              ${{ product.price }}
+              {% endif %}
+            </span>
+
           </div>
         </div>
-
         {% endfor %}
         <div class="col-md-12">
           <div class="pagination">
