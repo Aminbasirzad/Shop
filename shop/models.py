@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 
@@ -79,6 +80,9 @@ class Product(models.Model):
     if self.discounted_percentage > 0:
       return self.price * (1 - self.discounted_percentage / 100)
     return self.price
+
+  def get_absolute_url(self):
+    return reverse('product_detail', kwargs={'id':self.id})
 
 
 class ProductSpecification(models.Model):

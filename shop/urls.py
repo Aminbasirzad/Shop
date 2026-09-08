@@ -1,6 +1,12 @@
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import ProductSitemap
 from django.urls import path
 from . import views
 
+
+sitemaps = {
+    'products': ProductSitemap,
+  }
 
 urlpatterns = [
   path('product_detail/<int:id>/', views.product_detail, name='product_detail'),
@@ -16,5 +22,7 @@ urlpatterns = [
   path('product/<int:id>/review/', views.add_review, name='add_review'),
   path('review/<int:id>/delete/', views.delete_review, name='delete_review'),
   path('review/<int:id>/edit/', views.edit_review, name='edit_review'),
+  path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django_sitemap'),
+
 
 ]
