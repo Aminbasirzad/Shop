@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="{% static '/css/bootstrap.rtl.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/meanmenu.css' %}">
-  <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/icofont.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/font-awesome-pro.css' %}">
-  <link rel="stylesheet" href="{% static '/css/scrollcue.css' %}">
-  <link rel="stylesheet" href="{% static '/css/magnific-popup.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
-  <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
-  <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}">
+  <link rel="stylesheet" href="{% static 'css/scrollcue.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
   <title>Stir - قالب HTML آژانس چند منظوره</title>
 </head>
 
@@ -39,13 +39,13 @@
     <div class="main-nav">
       <div class="container mw-1680">
         <nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="{% url 'home' %}"><img
-              src="{% static '/images/white-logo.svg' %}" alt="logo"></a>
+              src="{% static 'images/white-logo.svg' %}" alt="logo"></a>
           <div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">آژانس خلاق</a></li>
+                  <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">خانه</a></li>
                   <li class="nav-item"><a href="{% url 'home_v2' %}" class="nav-link">آژانس بازرگانی</a></li>
                   <li class="nav-item"><a href="{% url 'home_v3' %}" class="nav-link">آژانس دیجیتال</a></li>
                 </ul>
@@ -54,9 +54,7 @@
                 <a href="#" class="nav-link dropdown-toggle">صفحات</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">درباره ما</a></li>
-                  <li class="nav-item"><a href="{% url 'team' %}" class="nav-link">تیم</a></li>
                   <li class="nav-item"><a href="{% url 'faq' %}" class="nav-link">سوالات متداول</a></li>
-                  <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link">گواهینامه ها</a></li>
                   <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle">احراز هویت</a>
                     <ul class="dropdown-menu">
@@ -72,17 +70,11 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
                   </li>
                 </ul>
               </li>
@@ -124,12 +116,12 @@
     <div class="mobile-nav">
       <div class="container">
         <div class="mobile-menu">
-          <div class="logo"><a href="index.html"><img src="{% static '/images/white-logo.svg' %}" alt="logo"></a></div>
+          <div class="logo"><a href="index.html"><img src="{% static 'images/white-logo.svg' %}" alt="logo"></a></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="page-banner-area bg-black bg-img" data-background="{% static '/images/banner-bg-shape.png' %}">
+  <div class="page-banner-area bg-black bg-img" data-background="{% static 'images/banner-bg-shape.png' %}">
     <div class="container mw-1680">
       <div class="page-banner-content">
         <h2>وبلاگ</h2>
@@ -145,7 +137,7 @@
       <div class="row align-items-center justify-content-center">
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-1.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-1.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -156,7 +148,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-2.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-2.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -167,7 +159,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-5.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-5.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -178,7 +170,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-6.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-6.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -189,7 +181,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-7.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-7.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -200,7 +192,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-8.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-8.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -211,7 +203,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-9.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-9.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -222,7 +214,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-10.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-10.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -233,7 +225,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item style-two">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-11.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-11.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -282,7 +274,7 @@
                 خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره
                 مالی...</p>
               <div class="d-flex align-items-center info">
-                <div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle"
+                <div class="flex-shrink-0"><img src="{% static 'images/testimonial-3.png' %}" class="rounded-circle"
                     alt="testimonial"></div>
                 <div class="flex-grow-1 ms-3">
                   <h3>برندی رو</h3>
@@ -302,7 +294,7 @@
                 خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره
                 مالی...</p>
               <div class="d-flex align-items-center info">
-                <div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle"
+                <div class="flex-shrink-0"><img src="{% static 'images/testimonial-3.png' %}" class="rounded-circle"
                     alt="testimonial"></div>
                 <div class="flex-grow-1 ms-3">
                   <h3>برندی رو</h3>
@@ -313,7 +305,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="testimonial-img-three mt-4 mt-lg-0"><img src="{% static '/images/testimonial-6.jpg' %}"
+          <div class="testimonial-img-three mt-4 mt-lg-0"><img src="{% static 'images/testimonial-6.jpg' %}"
               alt="testimonial"></div>
         </div>
       </div>
@@ -355,7 +347,7 @@
       <div class="row">
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
-            <a href="{% url 'home' %}" class="logo"><img src="{% static '/images/white-logo.svg' %}"
+            <a href="{% url 'home' %}" class="logo"><img src="{% static 'images/white-logo.svg' %}"
                 alt="white-logo"></a>
             <p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس
               بگیرید،</p>
@@ -372,8 +364,6 @@
             <h3>لینک های مفید</h3>
             <ul class="useful-link">
               <li><a href="{% url 'about' %}">درباره ما</a></li>
-              <li><a href="{% url 'case_study' %}">مطالعه موردی</a></li>
-              <li><a href="{% url 'service' %}">خدمات ما</a></li>
               <li><a href="{% url 'contact' %}">با ما تماس بگیرید</a></li>
               <li><a href="{% url 'faq' %}">سوالات متداول</a></li>
             </ul>
@@ -410,17 +400,17 @@
     </div>
   </div>
   <div class="back-to-top text-center"><i class="icofont-simple-up"></i></div>
-  <script src="{% static '/js/jquery.min.js' %}"></script>
-  <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static '/js/jquery.meanmenu.js' %}"></script>
-  <script src="{% static '/js/owl.carousel.min.js' %}"></script>
-  <script src="{% static '/js/scrollcue.js' %}"></script>
-  <script src="{% static '/js/magnific-popup.min.js' %}"></script>
-  <script src="{% static '/js/counterup.min.js' %}"></script>
-  <script src="{% static '/js/waypoints.min.js' %}"></script>
-  <script src="{% static '/js/mixitup.min.js' %}"></script>
-  <script src="{% static '/js/smoothscroll.min.js' %}"></script>
-  <script src="{% static '/js/custom.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/scrollcue.js' %}"></script>
+  <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/counterup.min.js' %}"></script>
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/mixitup.min.js' %}"></script>
+  <script src="{% static 'js/smoothscroll.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>

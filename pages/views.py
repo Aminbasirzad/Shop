@@ -10,9 +10,6 @@ def about(request):
   reviews = Review.objects.select_related('user', 'product').order_by('-created_at')[:5]
   return render(request, 'pages/about-us.html', {'reviews':reviews})
 
-def team(request):
-  return render(request,'pages/team.html')
-
 def faq(request):
   return render(request, 'pages/faq.html')
 
@@ -44,5 +41,3 @@ def contact(request):
     return redirect('contact')
   return render(request, 'pages/contact-us.html')
 
-def testimonials(request):
-  return render(request, 'pages/testimonials.html')

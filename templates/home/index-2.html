@@ -6,18 +6,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="{% static '/css/bootstrap.rtl.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/meanmenu.css' %}">
-  <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/icofont.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/font-awesome-pro.css' %}">
-  <link rel="stylesheet" href="{% static '/css/scrollcue.css' %}">
-  <link rel="stylesheet" href="{% static '/css/magnific-popup.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/helvetica-neue.css' %}">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
-  <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
-  <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}">
+  <link rel="stylesheet" href="{% static 'css/scrollcue.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/helvetica-neue.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
   <title>Stir - قالب HTML آژانس چند منظوره</title>
 </head>
 
@@ -40,7 +40,7 @@
     <div class="main-nav">
       <div class="container mw-1680">
         <nav class="navbar navbar-expand-md"><a class="navbar-brand" href="{% url 'home' %}"><img
-              src="{% static '/images/white-logo-2.svg' %}" alt="logo"></a>
+              src="{% static 'images/white-logo-2.svg' %}" alt="logo"></a>
           <div class="collapse navbar-collapse for-mobile-menu" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
@@ -73,17 +73,11 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
                   </li>
                 </ul>
               </li>
@@ -122,7 +116,7 @@
     <div class="mobile-nav">
       <div class="container">
         <div class="mobile-menu">
-          <div class="logo"><a href="{% url 'home' %}"><img src="{% static '/images/white-logo-2.svg' %}"
+          <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/white-logo-2.svg' %}"
                 alt="logo"></a></div>
         </div>
       </div>
@@ -134,7 +128,7 @@
         <div class="col-lg-7">
           <div class="banner-content-two position-relative" data-cues="slideInUp" data-group="images">
             <div class="target">
-              <img src="{% static '/images/target.svg' %}" class="target-icon" alt="target"><span>فراتر از یک آژانس
+              <img src="{% static 'images/target.svg' %}" class="target-icon" alt="target"><span>فراتر از یک آژانس
                 تجاری</span>
             </div>
             <h2>ارائه راه حل های منحصر به فرد برای موفقیت</h2>
@@ -149,13 +143,13 @@
                 </div>
               </a>
             </div>
-            <img src="{% static '/images/shape-2.png' %}" class="shape shape-2" alt="shape">
+            <img src="{% static 'images/shape-2.png' %}" class="shape shape-2" alt="shape">
           </div>
         </div>
         <div class="col-lg-5" data-cues="slideInUp">
           <div class="banner-img">
-            <img src="{% static '/images/banner-img.png' %}" alt="banner-img"><img
-              src="{% static '/images/banner-img-shape.png' %}" class="banner-img-shape" alt="banner-img-shape">
+            <img src="{% static 'images/banner-img.png' %}" alt="banner-img"><img
+              src="{% static 'images/banner-img-shape.png' %}" class="banner-img-shape" alt="banner-img-shape">
           </div>
         </div>
       </div>
@@ -165,7 +159,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <div class="about-us-img-two" data-cues="slideInUp"><img src="{% static '/images/about-us-2.png' %}"
+          <div class="about-us-img-two" data-cues="slideInUp"><img src="{% static 'images/about-us-2.png' %}"
               alt="about-us"></div>
         </div>
         <div class="col-lg-6">
@@ -199,47 +193,47 @@
         <div class="services-slide owl-carousel owl-theme">
           <div class="services-single-item-two">
             <span class="borders"></span>
-            <h3><a href="{% url 'services_detail' %}">مشاوره استراتژیک</a></h3>
+            <h3><a href="">مشاوره استراتژیک</a></h3>
             <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از تحلیل بازار و استراتژی های
               رشد ...</p>
             <div class="d-flex justify-content-between align-items-center">
-              <img src="{% static '/images/services-icon-5.svg' %}" alt="services-icon"><a
-                href="{% url 'services_detail' %}" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
+              <img src="{% static 'images/services-icon-5.svg' %}" alt="services-icon"><a
+                href="" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="services-single-item-two">
             <span class="borders"></span>
-            <h3><a href="{% url 'services_detail' %}">تحول دیجیتال</a></h3>
+            <h3><a href="">تحول دیجیتال</a></h3>
             <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از تحلیل بازار و استراتژی های
               رشد ...</p>
             <div class="d-flex justify-content-between align-items-center">
-              <img src="{% static '/images/services-icon-6.svg' %}" alt="services-icon"><a
-                href="{% url 'services_detail' %}" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
+              <img src="{% static 'images/services-icon-6.svg' %}" alt="services-icon"><a
+                href="" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="services-single-item-two">
             <span class="borders"></span>
-            <h3><a href="{% url 'services_detail' %}">بازاریابی و برندسازی</a></h3>
+            <h3><a href="">بازاریابی و برندسازی</a></h3>
             <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از تحلیل بازار و استراتژی های
               رشد ...</p>
             <div class="d-flex justify-content-between align-items-center">
-              <img src="{% static '/images/services-icon-7.svg' %}" alt="services-icon"><a
-                href="{% url 'services_detail' %}" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
+              <img src="{% static 'images/services-icon-7.svg' %}" alt="services-icon"><a
+                href="" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="services-single-item-two">
             <span class="borders"></span>
-            <h3><a href="{% url 'services_detail' %}">خدمات مشاوره مالی</a></h3>
+            <h3><a href="">خدمات مشاوره مالی</a></h3>
             <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از تحلیل بازار و استراتژی های
               رشد ...</p>
             <div class="d-flex justify-content-between align-items-center">
-              <img src="{% static '/images/services-icon-8.svg' %}" alt="services-icon"><a
-                href="{% url 'services_detail' %}" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
+              <img src="{% static 'images/services-icon-8.svg' %}" alt="services-icon"><a
+                href="" class="read-btn"><i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-lg-4 pt-lg-2"><a href="{% url 'service' %}"
+      <div class="text-center mt-lg-4 pt-lg-2"><a href=""
           class="main-btn border-btn d-inline-block"><span>همه خدمات را مرور کنید</span><i
             class="fa-regular fa-arrow-right"></i></a></div>
     </div>
@@ -268,7 +262,7 @@
         </div>
       </div>
     </div>
-    <img src="{% static '/images/shape-3.png' %}" class="shape shape-3" alt="shape">
+    <img src="{% static 'images/shape-3.png' %}" class="shape shape-3" alt="shape">
   </div>
   <div class="recent-cases-area pb-100">
     <div class="container">
@@ -280,7 +274,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">بازار یابی</a>
           <h3><a href="{% url 'case_study' %}">توسعه کسب و کار و مشارکت</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-1.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-1.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -288,7 +282,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">طراحی وب سایت</a>
           <h3><a href="{% url 'case_study' %}">مدیریت بحران و کاهش ریسک</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-2.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-2.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -296,7 +290,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">مشاوره</a>
           <h3><a href="{% url 'case_study' %}">طراحی خلاقانه و تولید محتوا</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-3.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-3.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -304,7 +298,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">بازار یابی</a>
           <h3><a href="{% url 'case_study' %}">توسعه کسب و کار و مشارکت</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-1.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-1.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -312,7 +306,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">طراحی وب سایت</a>
           <h3><a href="{% url 'case_study' %}">مدیریت بحران و کاهش ریسک</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-2.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-2.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -320,7 +314,7 @@
         <div class="recent-cases-single-item">
           <a href="{% url 'case_study' %}" class="tag">مشاوره</a>
           <h3><a href="{% url 'case_study' %}">طراحی خلاقانه و تولید محتوا</a></h3>
-          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static '/images/cases-3.jpg' %}"
+          <a href="{% url 'case_study' %}" class="cases-img"><img src="{% static 'images/cases-3.jpg' %}"
               alt="cases"></a>
           <p>مشاوران متخصص ما دستگاه های متناسب با هدف صنایع دستی شما را ارائه می دهند. از استراتژی های تحلیل بازار ...
           </p>
@@ -328,7 +322,7 @@
       </div>
     </div>
   </div>
-  <div class="get-in-touch-area bg-img" data-background="{% static '/images/get-in-bg.jpg' %}">
+  <div class="get-in-touch-area bg-img" data-background="{% static 'images/get-in-bg.jpg' %}">
     <div class="container">
       <div class="row align-items-center" data-cues="slideInUp">
         <div class="col-lg-8">
@@ -353,7 +347,7 @@
       <div class="row justify-content-center" data-cues="slideInUp">
         <div class="col-xl-3 col-md-6">
           <div class="team-single-item">
-            <img src="{% static '/images/team-1.jpg' %}" alt="team">
+            <img src="{% static 'images/team-1.jpg' %}" alt="team">
             <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
               <div class="info">
                 <h3>دایانا ویلسون</h3>
@@ -372,7 +366,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
           <div class="team-single-item">
-            <img src="{% static '/images/team-2.jpg' %}" alt="team">
+            <img src="{% static 'images/team-2.jpg' %}" alt="team">
             <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
               <div class="info">
                 <h3>سد شیلا</h3>
@@ -391,7 +385,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
           <div class="team-single-item">
-            <img src="{% static '/images/team-3.jpg' %}" alt="team">
+            <img src="{% static 'images/team-3.jpg' %}" alt="team">
             <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
               <div class="info">
                 <h3>گلندا پلرین</h3>
@@ -410,7 +404,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
           <div class="team-single-item">
-            <img src="{% static '/images/team-4.jpg' %}" alt="team">
+            <img src="{% static 'images/team-4.jpg' %}" alt="team">
             <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
               <div class="info">
                 <h3>جسیکا پاروت</h3>
@@ -463,7 +457,7 @@
                 خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره
                 مالی...</p>
               <div class="d-flex align-items-center info">
-                <div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle"
+                <div class="flex-shrink-0"><img src="{% static 'images/testimonial-3.png' %}" class="rounded-circle"
                     alt="testimonial"></div>
                 <div class="flex-grow-1 ms-3">
                   <h3>برندی رو</h3>
@@ -483,7 +477,7 @@
                 خدمات را ارائه می‌دهد. از مشاوره استراتژیک و تحول دیجیتال گرفته تا استراتژی های بازاریابی و مشاوره
                 مالی...</p>
               <div class="d-flex align-items-center info">
-                <div class="flex-shrink-0"><img src="{% static '/images/testimonial-3.png' %}" class="rounded-circle"
+                <div class="flex-shrink-0"><img src="{% static 'images/testimonial-3.png' %}" class="rounded-circle"
                     alt="testimonial"></div>
                 <div class="flex-grow-1 ms-3">
                   <h3>برندی رو</h3>
@@ -494,7 +488,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="testimonial-img mt-4 mt-lg-0"><img src="{% static '/images/testimonial-4.jpg' %}"
+          <div class="testimonial-img mt-4 mt-lg-0"><img src="{% static 'images/testimonial-4.jpg' %}"
               alt="testimonial"></div>
         </div>
       </div>
@@ -515,7 +509,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-1.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-1.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -526,7 +520,7 @@
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="blog-single-item">
-            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static '/images/blog-2.jpg' %}"
+            <a href="{% url 'blog_detail' %}" class="d-block blog-img"><img src="{% static 'images/blog-2.jpg' %}"
                 alt="blog"></a>
             <ul class="ps-0 list-unstyled date">
               <li><span>27 نوامبر 2023</span></li>
@@ -538,7 +532,7 @@
       </div>
     </div>
   </div>
-  <div class="subscribe-newsletter-area bg-img" data-background="{% static '/images/get-in-bg.jpg' %}">
+  <div class="subscribe-newsletter-area bg-img" data-background="{% static 'images/get-in-bg.jpg' %}">
     <div class="container">
       <div class="row align-items-center" data-cues="slideInUp">
         <div class="col-lg-6">
@@ -562,7 +556,7 @@
       <div class="row">
         <div class="col-xl-4" data-cues="slideInUp">
           <div class="footer-single-item style-two">
-            <a href="index.html" class="logo"><img src="{% static '/images/white-logo-2.svg' %}" alt="white-logo"></a>
+            <a href="index.html" class="logo"><img src="{% static 'images/white-logo-2.svg' %}" alt="white-logo"></a>
             <p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس
               بگیرید و بیایید با هم همکاری کنیم تا چشم انداز شما را زنده کنیم.</p>
             <ul class="social-link ps-0 mb-0 list-unstyled">
@@ -620,17 +614,17 @@
     </div>
   </div>
   <div class="back-to-top text-center"><i class="icofont-simple-up"></i></div>
-  <script src="{% static '/js/jquery.min.js' %}"></script>
-  <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static '/js/jquery.meanmenu.js' %}"></script>
-  <script src="{% static '/js/owl.carousel.min.js' %}"></script>
-  <script src="{% static '/js/scrollcue.js' %}"></script>
-  <script src="{% static '/js/magnific-popup.min.js' %}"></script>
-  <script src="{% static '/js/counterup.min.js' %}"></script>
-  <script src="{% static '/js/waypoints.min.js' %}"></script>
-  <script src="{% static '/js/mixitup.min.js' %}"></script>
-  <script src="{% static '/js/smoothscroll.min.js' %}"></script>
-  <script src="{% static '/js/custom.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/scrollcue.js' %}"></script>
+  <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/counterup.min.js' %}"></script>
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/mixitup.min.js' %}"></script>
+  <script src="{% static 'js/smoothscroll.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>
