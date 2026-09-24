@@ -1,38 +1,61 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
+
+
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
+from .forms import SignUpForm
 
 
 def sign_up(request):
 
     if request.method == 'POST':
 
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+        form = SignUpForm(request.POST)
 
-        if User.objects.filter(username=email).exists():
+        if form.is_valid():
 
-            return render(
-                request,
-                'account/sign-up.html',
-                {
-                    'error': 'این ایمیل قبلاً ثبت شده است.'
-                }
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            if User.objects.filter(username=email).exists():
+
+                return render(
+                    request,
+                    'account/sign-up.html',
+                    {
+                        'form': form,
+                        'error': 'این ایمیل قبلاً ثبت شده است.'
+                    }
+                )
+
+            user = User.objects.create_user(
+                username=email,
+                email=email,
+                password=password,
+                first_name=name
             )
 
-        user = User.objects.create_user(
-            username=email,
-            email=email,
-            password=password,
-            first_name=name
-        )
+            login(request, user)
 
-        login(request, user)
+            return redirect('home')
 
-        return redirect('home')
+    else:
+        form = SignUpForm()
 
-    return render(request, 'account/sign-up.html')
+    return render(
+        request,
+        'account/sign-up.html',
+        {
+            'form': form
+        }
+    )
 
 def sign_in(request):
 

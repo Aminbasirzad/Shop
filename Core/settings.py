@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'shop',
     'accounts',
     'pages',
+    'captcha',
     
 ]
 

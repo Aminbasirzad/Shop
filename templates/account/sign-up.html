@@ -46,6 +46,8 @@
                 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">خانه</a></li>
+                  <li class="nav-item"><a href="{% url 'home_v2' %}" class="nav-link">آژانس بازرگانی</a></li>
+                  <li class="nav-item"><a href="{% url 'home_v3' %}" class="nav-link">آژانس دیجیتال</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -163,48 +165,55 @@
                   <i class="fa fa-eye-slash password-toggle-icon" aria-hidden="true">
                   </i>
 
-                </div>
-              </div>
-
-              <div class="form-group mb-4">
-
-                <div class="form-check">
-
-                  <input class="form-check-input" type="checkbox" id="flexCheckDefault" required>
-
-                  <label class="form-check-label" for="flexCheckDefault">
-
-                    موافق به
-
-                    <a href="{% url 'terms_conditions' %}">
-                      شرایط و ضوابط
-                    </a>
-
-                    و
-
-                    <a href="{% url 'privacy_policy' %}">
-                      سیاست حفظ حریم خصوصی
-                    </a>
-
-                  </label>
 
                 </div>
-
               </div>
-
-              <div class="form-group mb-4">
-
-                <button type="submit" class="main-btn">
-                  ثبت نام
-                </button>
-
-              </div>
-
-            </form>
           </div>
+
+          <div class="form-group mb-4">
+            {{ form.captcha }}
+
+            {% if form.captcha.errors %}
+
+            <div class="form-check">
+              {{ form.captcha.errors }}
+
+              <input class="form-check-input" type="checkbox" id="flexCheckDefault" required>
+
+              <label class="form-check-label" for="flexCheckDefault">
+
+                موافق به
+
+                <a href="{% url 'terms_conditions' %}">
+                  شرایط و ضوابط
+                </a>
+
+                و
+
+                <a href="{% url 'privacy_policy' %}">
+                  سیاست حفظ حریم خصوصی
+                </a>
+
+              </label>
+
+            </div>
+            {% endif %}
+
+          </div>
+
+          <div class="form-group mb-4">
+
+            <button type="submit" class="main-btn">
+              ثبت نام
+            </button>
+
+          </div>
+
+          </form>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="footer-area pt-100 pb-75 bg-color-030303">
     <div class="container">
