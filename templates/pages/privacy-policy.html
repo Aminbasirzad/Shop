@@ -46,17 +46,13 @@
                 <a href="#" class="nav-link dropdown-toggle">صفحه اصلی</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">آژانس خلاق</a></li>
-                  <li class="nav-item"><a href="{% url 'home_v2' %}" class="nav-link">آژانس بازرگانی</a></li>
-                  <li class="nav-item"><a href="{% url 'home_v3' %}" class="nav-link">آژانس دیجیتال</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle active">صفحات</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">درباره ما</a></li>
-                  <li class="nav-item"><a href="{% url 'team' %}" class="nav-link">تیم</a></li>
                   <li class="nav-item"><a href="{% url 'faq' %}" class="nav-link">سوالات متداول</a></li>
-                  <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link">گواهینامه ها</a></li>
                   <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle">احراز هویت</a>
                     <ul class="dropdown-menu">
@@ -72,42 +68,34 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خدمات</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">خدمات</a></li>
-                  <li class="nav-item"><a href="{% url 'services_detail' %}" class="nav-link">جزئیات خدمات</a></li>
+
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">مطالعه موردی</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'case_study' %}" class="nav-link">مطالعه موردی</a></li>
-                  <li class="nav-item"><a href="{% url 'case_study_detail' %}" class="nav-link">جزئیات مطالعه موردی</a>
-                  </li>
-                </ul>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
-                  <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
-                  <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">وبلاگ</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">وبلاگ</a></li>
-                  <li class="nav-item"><a href="{% url 'blog_detail' %}" class="nav-link">صفحه وبلاگ واحد</a></li>
-                </ul>
-              </li>
+            </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
+                <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
+                <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+
+              <ul class="dropdown-menu">
+
+
+              </ul>
+            </li>
             </ul>
             <div class="nav-right-options d-flex align-items-center">
               <div class="language position-relative z-1">
                 <select class="form-select" aria-label="Default select example">
-                  <option selected>انگلیسی</option>
-                  <option value="1">عربی</option>
-                  <option value="2">چین</option>
                 </select><i class="fa-light fa-globe"></i>
               </div>
               <ul class="social-link ps-0 mb-0 list-unstyled">
@@ -133,6 +121,7 @@
   <div class="page-banner-area bg-black bg-img" data-background="{% static 'images/banner-bg-shape.png' %}">
     <div class="container mw-1680">
       <div class="page-banner-content">
+        `html
         <h2>سیاست حفظ حریم خصوصی</h2>
         <ul class="ps-0 mb-0 list-unstyled justify-content-center page-breadcrumb d-flex flex-wrap gap-4">
           <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
@@ -141,48 +130,115 @@
       </div>
     </div>
   </div>
+
   <div class="privacy-policy-area ptb-100">
     <div class="container">
       <div class="privacy-policy-content">
-        <h3>سیاست حفظ حریم خصوصی</h3>
-        <p>لورم ایوم متن ساختگی با تولید آسان نامفهوم از صنعت چاپ با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
-          روزنامه و در ستون و سطرآنان است که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
-          بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت جامعه و متخصصان را می
-          طلبد تا با نرم افزارها بیشتر را برای طراحان رایانه ای علی الخصوص طراحان خلاق و فرهنگ پیشرو در زبان فارسی ایجاد
-          کرد. در این ص</p>
+
+        <h3>سیاست حفظ حریم خصوصی ShopFlow</h3>
+        <p>
+          در ShopFlow حفظ حریم خصوصی کاربران اهمیت زیادی دارد. ما تلاش می‌کنیم
+          اطلاعات شخصی کاربران را با دقت و امنیت مناسب نگهداری کنیم و از آن‌ها
+          تنها برای ارائه بهتر خدمات، پردازش سفارش‌ها و بهبود تجربه خرید استفاده کنیم.
+          با استفاده از وب‌سایت ShopFlow، شما با شرایط توضیح داده‌شده در این صفحه موافقت می‌کنید.
+        </p>
+
         <div class="mb-30"></div>
-        <h3>حریم خصوصی شرکت شما</h3>
-        <p>لورم ایوم متن ساختگی با تولید آسان نامفهوم از صنعت چاپ با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
-          روزنامه و در ستون و سطرآنان است که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
-          بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت جامعه و متخصصان را می
-          طلبد تا با نرم افزارها بیشتر را برای طراحان رایانه ای علی الخصوص طراحان خلاق و فرهنگ پیشرو در زبان فارسی ایجاد
-          کرد. در این ص</p>
+
+        <h3>اطلاعاتی که از کاربران دریافت می‌کنیم</h3>
+        <p>
+          هنگام ثبت‌نام، ثبت سفارش یا تماس با پشتیبانی ممکن است اطلاعاتی مانند
+          نام و نام خانوادگی، شماره تماس، آدرس، ایمیل و اطلاعات مربوط به سفارش
+          از شما دریافت شود. این اطلاعات برای تکمیل سفارش، ارسال کالا و
+          برقراری ارتباط با شما مورد استفاده قرار می‌گیرد.
+        </p>
+
         <div class="mb-30"></div>
-        <h3>خط مشی شرکت شما</h3>
-        <p>لورم ایوم متن ساختگی با تولید آسان نامفهوم از صنعت چاپ با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
-          روزنامه و در ستون و سطرآنان است که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
-          بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت جامعه و متخصصان را می
-          طلبد تا با نرم افزارها بیشتر را برای طراحان رایانه ای علی الخصوص طراحان خلاق و فرهنگ پیشرو در زبان فارسی ایجاد
-          کرد. در این ص</p>
+
+        <h3>نحوه استفاده از اطلاعات کاربران</h3>
+        <p>
+          ShopFlow از اطلاعات کاربران برای پردازش و مدیریت سفارش‌ها، ارسال
+          محصولات، پاسخ‌گویی به درخواست‌های پشتیبانی، بهبود خدمات فروشگاه و
+          اطلاع‌رسانی درباره وضعیت سفارش استفاده می‌کند. اطلاعات کاربران
+          بدون دلیل قانونی یا رضایت لازم در اختیار اشخاص غیرمرتبط قرار نخواهد گرفت.
+        </p>
+
         <div class="mb-30"></div>
-        <h3>خط مشی Rright را کپی کنید</h3>
-        <p>لورم ایوم متن ساختگی با تولید آسان نامفهوم از صنعت چاپ با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
-          روزنامه و در ستون و سطرآنان است که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
-          بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت جامعه و متخصصان را می
-          طلبد تا با نرم افزارها بیشتر را برای طراحان رایانه ای علی الخصوص طراحان خلاق و فرهنگ پیشرو در زبان فارسی ایجاد
-          کرد. در این ص</p>
+
+        <h3>امنیت اطلاعات</h3>
+        <p>
+          ما تلاش می‌کنیم با استفاده از روش‌های امنیتی مناسب از اطلاعات کاربران
+          در برابر دسترسی غیرمجاز، تغییر، افشا یا سوءاستفاده محافظت کنیم.
+          با این حال، هیچ روش انتقال یا ذخیره‌سازی اطلاعات در اینترنت نمی‌تواند
+          امنیت صددرصدی را تضمین کند.
+        </p>
+
+        <div class="mb-30"></div>
+
+        <h3>کوکی‌ها</h3>
+        <p>
+          وب‌سایت ShopFlow ممکن است برای ارائه تجربه کاربری بهتر از کوکی‌ها
+          استفاده کند. کوکی‌ها می‌توانند برای حفظ تنظیمات کاربر، مدیریت نشست
+          کاربری و بررسی نحوه استفاده از بخش‌های مختلف سایت مورد استفاده قرار گیرند.
+        </p>
+
+        <div class="mb-30"></div>
+
+        <h3>اشتراک‌گذاری اطلاعات</h3>
+        <p>
+          اطلاعات کاربران تنها در مواردی که برای ارائه خدمات فروشگاه ضروری باشد،
+          مانند پردازش سفارش، ارسال کالا یا انجام خدمات مرتبط، در اختیار
+          ارائه‌دهندگان خدمات مربوطه قرار می‌گیرد. ShopFlow اطلاعات شخصی کاربران
+          را برای فروش یا تبلیغات غیرمرتبط در اختیار اشخاص ثالث قرار نمی‌دهد.
+        </p>
+
+        <div class="mb-30"></div>
+
+        <h3>حقوق کاربران</h3>
+        <p>
+          کاربران می‌توانند در صورت وجود هرگونه سؤال درباره اطلاعات شخصی خود،
+          نحوه استفاده از آن‌ها یا درخواست اصلاح اطلاعات، با پشتیبانی ShopFlow
+          تماس بگیرند. ما تلاش می‌کنیم درخواست‌های کاربران را در چارچوب قوانین
+          و مقررات مربوطه بررسی و پاسخ‌گویی کنیم.
+        </p>
+
+        <div class="mb-30"></div>
+
+        <h3>تغییرات سیاست حفظ حریم خصوصی</h3>
+        <p>
+          ممکن است این سیاست در آینده برای هماهنگی با تغییرات خدمات یا قوانین
+          به‌روزرسانی شود. در صورت ایجاد تغییرات مهم، نسخه جدید سیاست حفظ حریم
+          خصوصی در همین صفحه منتشر خواهد شد. پیشنهاد می‌کنیم کاربران به‌صورت
+          دوره‌ای این صفحه را بررسی کنند.
+        </p>
+
+        <div class="mb-30"></div>
+
+        <h3>تماس با ShopFlow</h3>
+        <p>
+          اگر درباره سیاست حفظ حریم خصوصی، نحوه استفاده از اطلاعات یا خدمات
+          ShopFlow سؤالی دارید، می‌توانید از طریق اطلاعات تماس درج‌شده در
+          بخش تماس با ما با تیم پشتیبانی ارتباط برقرار کنید.
+        </p>
+
       </div>
     </div>
   </div>
+
   <div class="footer-area pt-100 pb-75 bg-color-030303">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
-            <a href="{% url 'home' %}" class="logo"><img src="{% static 'images/white-logo.svg' %}"
-                alt="white-logo"></a>
-            <p>در سفری به ما بپیوندید که در آن خلاقیت حد و مرزی نمی شناسد و نوآوری رشد می کند. امروز با [Stir] تماس
-              بگیرید،</p>
+            <a href="{% url 'home' %}" class="logo">
+              <img src="{% static 'images/white-logo.svg' %}" alt="ShopFlow">
+            </a>
+            <p>
+              در ShopFlow تلاش می‌کنیم تجربه‌ای ساده، سریع و مطمئن
+              برای خرید گوشی، لپ‌تاپ و محصولات دیجیتال فراهم کنیم.
+            </p>
+            `
             <ul class="social-link ps-0 mb-0 list-unstyled">
               <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
               <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -196,8 +252,6 @@
             <h3>لینک های مفید</h3>
             <ul class="useful-link">
               <li><a href="{% url 'about' %}">درباره ما</a></li>
-              <li><a href="{% url 'case_study' %}">مطالعه موردی</a></li>
-              <li><a href="{% url 'service' %}">خدمات ما</a></li>
               <li><a href="{% url 'contact' %}">با ما تماس بگیرید</a></li>
               <li><a href="{% url 'faq' %}">سوالات متداول</a></li>
             </ul>
@@ -206,17 +260,17 @@
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
             <h3>با ما تماس بگیرید</h3>
-            <p class="mb-3">خیابان Samwell، Trankturt 2589 نیویورک.</p>
+            <p class="mb-3">تهران.</p>
             <ul class="contact-info ms-0">
               <li><a href="mailto:information@stir.com">information@stir.com</a></li>
-              <li><a href="tel:+52883256953129">+5288 32569 53129</a></li>
+              <li><a href="tel:+52883256953129">+98 0914123456</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-sm-6">
           <div class="footer-single-item style-three">
-            <h3>مشترک ما شوید</h3>
-            <p>برای به روز رسانی های بعدی در خبرنامه ما مشترک شوید. نگران نباشید ما آدرس ایمیل شما را اسپم نمی کنیم</p>
+            <h3>عضویت در خبرنامه</h3>
+            <p>برای اطلاع از جدید تربن محصولات، تخفیف ها و پیشنهادهای ویژه در خبرنامه ما عضو شوید. </p>
             <form class="position-relative z-1">
               <input type="text" class="form-control" placeholder="ایمیل خود را وارد کنید"><button type="submit"
                 class="p-0 bg-transparent border-0 send-btn position-absolute top-50 end-0 translate-middle-y"><i
@@ -229,7 +283,7 @@
   </div>
   <div class="bg-color-030303">
     <div class="container">
-      <p class="copy-right style-three">کپی رایت،<span>برای <a href="https://mellatweb.com"> ملت وب </a></span>تمامی
+      <p class="copy-right style-three">© 2026<span>ShopFlow</span>تمامی
         حقوق محفوظ است</p>
     </div>
   </div>
