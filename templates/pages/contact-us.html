@@ -73,24 +73,24 @@
               </li>
               <li class="nav-item">
                 <ul class="dropdown-menu">
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
-                  <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
-                  <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <ul class="dropdown-menu">
-                </ul>
               </li>
             </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle">خرید کنید</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">محصولات</a></li>
+                <li class="nav-item"><a href="{% url 'cart' %}" class="nav-link">سبد خرید</a></li>
+                <li class="nav-item"><a href="{% url 'checkout' %}" class="nav-link">وارسی</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <ul class="dropdown-menu">
+              </ul>
+            </li>
+            </ul>
             <div class="nav-right-options d-flex align-items-center">
-             
+
               <ul class="social-link ps-0 mb-0 list-unstyled">
                 <li><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -128,13 +128,13 @@
         <h3>یک پیام فرستاد</h3>
         <div class="row">
           <div class="col-lg-8 col-xl-9">
-          {% if messages %}
-          {% for message in messages %}
-          <div class="alert alert-success">
-            {{ message }}
-          </div>
-          {% endfor %}
-          {% endif %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success">
+              {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
             <form action="{% url 'contact' %}" method="POST">
               {% csrf_token %}
 
@@ -174,6 +174,19 @@
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
                     <div class="form-check">
+                      <div class="col-lg-12">
+                        <div class="form-group mb-4">
+
+                          {{ form.captcha }}
+
+                          {% if form.captcha.errors %}
+                          <div class="alert alert-danger mt-2">
+                            {{ form.captcha.errors }}
+                          </div>
+                          {% endif %}
+
+                        </div>
+                      </div>
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
                         برای دفعه بعد که نظر می دهم نام، ایمیل و وب سایت
@@ -199,7 +212,7 @@
               <h3>ما را اینجا پیدا کنید</h3>
               <ul class="ps-0 mb-0 list-unstyled info-list">
                 <li>
-                  <span>نشانی:</span>تهران ایالات متحده آمریکا
+                  <span>نشانی:</span>تهران
                 </li>
                 <li>
                   <span>تلفن:</span><a href="tel:+52883256953129">+98 0914123456</a>

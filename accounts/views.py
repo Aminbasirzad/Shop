@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from captcha.models import CaptchaStore
 from captcha.helpers import captcha_image_url
+from .forms import SignUpForm
 
 
 from django.contrib.auth import login
