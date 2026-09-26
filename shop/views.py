@@ -89,7 +89,9 @@ def remove_from_cart(request, id):
   return redirect('cart')
 
 def checkout(request):
+
     if request.method == 'POST':
+
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         phone = request.POST.get('phone')
@@ -104,18 +106,22 @@ def checkout(request):
         total_price = 0
 
         for product in products:
+
             quantity = cart.get(str(product.id), 0)
+
             total_price += product.final_price * quantity
 
         order = Order.objects.create(
-           user=request.user if request.user.is_authenticated else None,
+            user=request.user if request.user.is_authenticated else None,
             name=full_name,
             phone=phone,
             address=address,
-            total_price=total_price
+            total_price=total_price,
+            payment_status='pending'
         )
 
         for product in products:
+
             quantity = cart.get(str(product.id), 0)
 
             OrderItem.objects.create(
@@ -125,12 +131,28 @@ def checkout(request):
                 price=product.final_price
             )
 
-        request.session['cart'] = {}
+        return redirect('mock_payment', order_id=order.id)
 
-        return redirect('order_success')
+    return render(
+        request,
+        'products/checkout.html'
+    )
 
-    return render(request, 'products/checkout.html')
 
+def mock_payment(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    return render(
+        request,
+        'payment/mock_payment.html',
+        {
+            'order': order
+        }
+    )
 
 @login_required
 def my_orders(request):
@@ -216,3 +238,37 @@ def delete_review(request, id):
       review.delete()
 
    return redirect('product_detail', id=product_id)
+
+
+
+def mock_payment_success(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    order.payment_status = 'paid'
+    order.save(update_fields=['payment_status'])
+
+    # خالی کردن سبد فقط بعد از پرداخت موفق
+    request.session['cart'] = {}
+    request.session.modified = True
+
+    return redirect('order_success')
+
+
+def mock_payment_failed(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    order.payment_status = 'failed'
+    order.save(update_fields=['payment_status'])
+
+    return redirect(
+        'mock_payment_result',
+        order_id=order.id
+    )

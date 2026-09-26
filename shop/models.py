@@ -171,31 +171,77 @@ class ProductVariant(models.Model):
     return f"{self.product.name} - {self.color.name}"
 
 class Order(models.Model):
-  user = models.ForeignKey(
-    User,
-    on_delete=models.CASCADE,
-    related_name='orders',
-    null=True,
-    blank=True
-    )
-  name = models.CharField(
-    max_length=100,
-    verbose_name='نام'
-    )
-  phone = models.CharField(
-    max_length=20,
-    verbose_name='شماره تماس'
-    )
-  address = models.TextField(verbose_name='آدرس')
-  total_price = models.DecimalField(
-    max_digits=12,
-    decimal_places=2,
-    verbose_name='مبلغ کل'
-    )
-  created_at = models.DateTimeField(auto_now_add=True)
 
-  def __str__(self):
-    return f"{self.name} - {self.id}"
+    PAYMENT_STATUS_CHOICES = [
+        ('pending', 'در انتظار پرداخت'),
+        ('paid', 'پرداخت شده'),
+        ('failed', 'ناموفق'),
+    ]
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='orders',
+        null=True,
+        blank=True
+    )
+
+    name = models.CharField(
+        max_length=100,
+        verbose_name='نام'
+    )
+
+    phone = models.CharField(
+        max_length=20,
+        verbose_name='شماره تماس'
+    )
+
+    address = models.TextField(
+        verbose_name='آدرس'
+    )
+
+    total_price = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        verbose_name='مبلغ کل'
+    )
+
+    payment_status = models.CharField(
+        max_length=20,
+        choices=PAYMENT_STATUS_CHOICES,
+        default='pending',
+        verbose_name='وضعیت پرداخت'
+    )
+
+    authority = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        unique=True,
+        verbose_name='کد تراکنش زرین‌پال'
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def str(self):
+        return f"{self.name} - {self.id}"
+
+    payment_status = models.CharField(
+      max_length=20,
+      choices = [
+        ('pending', 'در انتظار پرداخت'),
+        ('paid', 'پرداخت شده'),
+        ('failed', 'ناموفق')
+      ],
+      default='pending'
+   )
+
+    authority = models.CharField(
+      max_length=100,
+      blank=True,
+      null=True,
+      unique=True
+    )
 
 class OrderItem(models.Model):
   order = models.ForeignKey(

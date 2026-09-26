@@ -23,6 +23,23 @@ urlpatterns = [
   path('review/<int:id>/delete/', views.delete_review, name='delete_review'),
   path('review/<int:id>/edit/', views.edit_review, name='edit_review'),
   path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django_sitemap'),
+  path('payment/unt:order_id',views.mock_payment, name='mock_payment'),
+  path(
+    'payment/<int:order_id>/',
+    views.mock_payment,
+    name='mock_payment'
+),
+  path(
+    'payment/<int:order_id>/success/',
+    views.mock_payment_success,
+    name='mock_payment_success'
+),
+
+path(
+    'payment/<int:order_id>/failed/',
+    views.mock_payment_failed,
+    name='mock_payment_failed'
+),
 
 
 ]

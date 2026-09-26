@@ -1,0 +1,74 @@
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body text-center p-5">
+
+                    <h3 class="mb-4">
+                        پرداخت آزمایشی
+                    </h3>
+
+                    <p class="text-muted mb-4">
+                        این صفحه صرفاً برای نمایش فرآیند پرداخت در پروژه نمونه‌کار است.
+                    </p>
+
+                    <div class="mb-4">
+
+                        <p>
+                            <strong>شماره سفارش:</strong>
+                            {{ order.id }}
+                        </p>
+
+                        <p>
+                            <strong>مبلغ سفارش:</strong>
+                            {{ order.total_price }} ریال
+                        </p>
+
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-3">
+
+                        <form method="POST" action="{% url 'mock_payment_success' order.id %}">
+                            {% csrf_token %}
+
+                            <button
+                                type="submit"
+                                class="btn btn-success"
+                            >
+                                پرداخت موفق
+                            </button>
+
+                        </form>
+
+                        <form method="POST" action="{% url 'mock_payment_failed' order.id %}">
+                            {% csrf_token %}
+
+                            <button
+                                type="submit"
+                                class="btn btn-danger"
+                            >
+                                پرداخت ناموفق
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
